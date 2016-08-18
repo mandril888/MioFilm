@@ -1,0 +1,48 @@
+<form ng-submit="submit()" class="col-sm-6 col-sm-offset-3 input-group">
+	<div class="input-group">
+		<input type="text" class="form-control" placeholder="Search a film..." ng-model="filmToSearch">
+			<span class="input-group-btn">
+				<button class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+			</span>
+	</div>
+</form>
+
+<div>
+	<h1>How d you feel?</h1>
+	<ul>
+		<li>
+			<img src="../../img/smile.png" alt="">
+			<a href=""></a>
+		</li>
+		<li>
+			<img src="../../img/smile.png" alt="">
+			<a href=""></a>
+		</li>
+		<li>
+			<img src="../../img/smile.png" alt="">
+			<a href=""></a>
+		</li>
+		<li>
+			<img src="../../img/smile.png" alt="">
+			<a href=""></a>
+		</li>
+		<li>
+			<img src="../../img/smile.png" alt="">
+			<a href=""></a>
+		</li>
+		<li>
+			<img src="../../img/smile.png" alt="">
+			<a href=""></a>
+		</li>
+
+	</ul>
+</div>
+
+<div class="listFilms">
+	<div ng-repeat="movies in infoFilmSearched">
+		<img src="http://image.tmdb.org/t/p/w500/{{ movies.poster_path }}" alt="">
+		<strong><a href="/#/specifications/{{movies.id}}" target="_blank"><p>{{ movies.original_title }}</p></a></strong>
+		<p>{{ movies.release_date }}</p>
+		<p>{{ movies.vote_average }}</p>
+	</div>
+</div>

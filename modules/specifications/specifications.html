@@ -1,0 +1,14 @@
+<div>
+	<div>
+		<img width="300px" src="http://image.tmdb.org/t/p/w500/{{ specificationsFilmSearched.poster_path }}" alt="">
+		<strong><p>{{ specificationsFilmSearched.original_title }}</p></strong>
+		<emphasis><p>{{ specificationsFilmSearched.tagline }}</p></emphasis>
+		<p>{{ specificationsFilmSearched.release_date }}</p>
+		<p>{{ specificationsFilmSearched.vote_average }}</p>
+		<p>{{ specificationsFilmSearched.overview }}</p>
+
+		<img src="http://image.tmdb.org/t/p/w500/{{ specificationsFilmSearched.backdrop_path }}" alt="">
+		<p>{{ specificationsFilmSearched.genres.name }}</p>
+		<p>Time: {{ specificationsFilmSearched.runtime }}'</p>
+	</div>
+</div>

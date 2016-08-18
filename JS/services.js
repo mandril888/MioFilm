@@ -1,0 +1,1 @@
+angular.module( 'services', [ 'homeService', 'specificationsService', 'aboutService' ] );
