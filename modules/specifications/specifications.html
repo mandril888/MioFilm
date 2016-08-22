@@ -1,14 +1,33 @@
-<div>
-	<div>
-		<img width="300px" src="http://image.tmdb.org/t/p/w500/{{ specificationsFilmSearched.poster_path }}" alt="">
-		<strong><p>{{ specificationsFilmSearched.original_title }}</p></strong>
-		<emphasis><p>{{ specificationsFilmSearched.tagline }}</p></emphasis>
-		<p>{{ specificationsFilmSearched.release_date }}</p>
-		<p>{{ specificationsFilmSearched.vote_average }}</p>
-		<p>{{ specificationsFilmSearched.overview }}</p>
+<div class="container">
+	<div class="specifications-film">
+		<!-- <div class="header-cover" ng-style="{ 'background-image': 'url( http://image.tmdb.org/t/p/w500{{specificationsFilmSearched.backdrop_path}} )' }">
+			<div class="cover" ng-style="{'background-image': 'url(http://image.tmdb.org/t/p/w500{{specificationsFilmSearched.poster_path}})'}"></div>
+		</div> -->
 
-		<img src="http://image.tmdb.org/t/p/w500/{{ specificationsFilmSearched.backdrop_path }}" alt="">
-		<p>{{ specificationsFilmSearched.genres.name }}</p>
-		<p>Time: {{ specificationsFilmSearched.runtime }}'</p>
+		<div class="header-cover" style="background-image:url('http://image.tmdb.org/t/p/w500{{specificationsFilmSearched.backdrop_path}}')">
+			<div class="cover" style="background-image:url('http://image.tmdb.org/t/p/w500{{specificationsFilmSearched.poster_path}}')"></div>
+			<div class="title-film">
+				<p class="helvetica-font"><strong>{{ specificationsFilmSearched.original_title }}</strong></p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="basic-info">
+					<p><i class="glyphicon glyphicon-facetime-video"></i> {{ specificationsFilmSearched.release_date | date : 'yyyy' }}</p>
+					<p><i class="glyphicon glyphicon-time"></i> {{ specificationsFilmSearched.runtime }}'</p>
+					<p><i class="glyphicon glyphicon-star-empty star"></i> {{ specificationsFilmSearched.vote_average }}</p>
+				</div>
+			</div>
+			<div class="col-sm-9">
+				<h1>Psynopsis:</h1>
+				<div class="psynopsis">
+					<p>{{ specificationsFilmSearched.overview }}</p>
+				</div>
+			</div>
+
+		</div>
+			
+
+		<!-- <p><strong>Tagline: </strong><em>{{ specificationsFilmSearched.tagline }}</em></p> -->
 	</div>
 </div>

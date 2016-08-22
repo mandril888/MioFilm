@@ -6,6 +6,10 @@ html {
 	font-family: "Androgyne Medium", Verdana, Tahoma;
 }
 
+.helvetica-font { 
+	font-family: "Helvetica", Verdana, Tahoma;
+}
+
 .my-navbar {
 	background: black;
 	color: white;
@@ -35,15 +39,28 @@ html {
 }
 
 .miofilm-logo {
-	height: 70px;
+	margin: 10px auto;
+	height: 50px;
 	float: left;
 
 	@media screen and (max-width: 767px){
-		height: 50px;
+		margin: 5px auto;
+		height: 40px;
 	}
 
 	@media screen and (max-width: 512px){
-		height: 40px;
+		display: none;
+	}
+}
+
+.miofilm-imagotipo {
+	float: left;
+	display: none;
+
+	@media screen and (max-width: 512px){
+		display: inherit;
+		margin: 5px auto;
+		height: 30px;
 	}
 }
 
@@ -72,6 +89,10 @@ html {
 		margin: 5px auto;
 		height: 30px;
 	}
+}
+
+footer {
+	margin-top: 20px;
 }
 
 .items-footer {
@@ -107,7 +128,7 @@ html {
 
 	@media screen and (max-width: 410px){
 		display: inline-block;
-		margin-left: 27%;
+		margin-left: 26%;
 		text-align: center;
 	}
 }
