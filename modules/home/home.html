@@ -1,5 +1,5 @@
 <div class="bg-searcher">
-	<p class="tagline-searcher androgyne-font">feels the movies</p>
+	<p class="tagline-searcher androgyne-font">feel the movies</p>
 	<form ng-submit="submit()" class="col-sm-6 col-sm-offset-3 input-group">
 		<div class="input-group">
 			<input type="text" class="form-control" placeholder="Search a film..." ng-model="filmToSearch">
@@ -17,79 +17,87 @@
 		<ul>
 			<li>
 				<div class="individual-icon">
-					<a href="/#/" ng-click="searchFilmByMood('Mad')">
+					<a href="/#/" ng-click="filterSelectedFeelsMood('Mad')">
 						<img class="mood-icon" src="../../img/Mad.png" alt="Mad icon" href="" title="Hurt, hostile, angry, rage, hateful or critical">
 					</a>
-					<a class="btn btn-mad" href="/#/" role="button" title="Hurt, hostile, angry, rage, hateful or critical" ng-click="searchFilmByMood('Mad')">Mad</a>
+					<a class="btn btn-mad" href="/#/" role="button" title="Hurt, hostile, angry, rage, hateful or critical" ng-click="filterSelectedFeelsMood('Mad')">Mad</a>
 				</div>
 			</li>
 			<li>
 				<div class="individual-icon">
-					<a href="/#/" ng-click="searchFilmByMood('Scared')">
+					<a href="/#/" ng-click="filterSelectedFeelsMood('Scared')">
 						<img class="mood-icon" src="../../img/Scared.png" alt="Scared icon" href="" title="Rejected, confused, helpless, submissive, insecure or anxious">
 					</a>
-					<a class="btn btn-scared" href="/#/" role="button" title="Rejected, confused, helpless, submissive, insecure or anxious" ng-click="searchFilmByMood('Scared')">Scared</a>
+					<a class="btn btn-scared" href="/#/" role="button" title="Rejected, confused, helpless, submissive, insecure or anxious" ng-click="filterSelectedFeelsMood('Scared')">Scared</a>
 				</div>
 			</li>
 			<li>
 				<div class="individual-icon">
-					<a href="/#/" ng-click="searchFilmByMood('Joyful')">
+					<a href="/#/" ng-click="filterSelectedFeelsMood('Joyful')">
 						<img class="mood-icon" src="../../img/Joyful.png" alt="Joyful icon" href="" title="Excited, sexy, energetic, playful, creative or aware">
 					</a>
-					<a class="btn btn-joyful" href="/#/" role="button" title="Excited, sexy, energetic, playful, creative or aware" ng-click="searchFilmByMood('Joyful')">Joyful</a>
+					<a class="btn btn-joyful" href="/#/" role="button" title="Excited, sexy, energetic, playful, creative or aware" ng-click="filterSelectedFeelsMood('Joyful')">Joyful</a>
 				</div>
 			</li>
 			<li>
 				<div class="individual-icon">
-					<a href="/#/" ng-click="searchFilmByMood('Powerful')">
+					<a href="/#/" ng-click="filterSelectedFeelsMood('Powerful')">
 						<img class="mood-icon" src="../../img/Powerful.png" alt="Powerful icon" href="" title="Faithful, important, hopeful, appreciated, respected or proud">
 					</a>
-					<a class="btn btn-powerful" href="/#/" role="button" title="Faithful, important, hopeful, appreciated, respected or proud" ng-click="searchFilmByMood('Powerful')">Powerful</a>
+					<a class="btn btn-powerful" href="/#/" role="button" title="Faithful, important, hopeful, appreciated, respected or proud" ng-click="filterSelectedFeelsMood('Powerful')">Powerful</a>
 				</div>
 			</li>
 			<li>
 				<div class="individual-icon">
-					<a href="/#/" ng-click="searchFilmByMood('Peaceful')">
+					<a href="/#/" ng-click="filterSelectedFeelsMood('Peaceful')">
 						<img class="mood-icon" src="../../img/Peaceful.png" alt="Peaceful icon" href="" title="Content, thoughtful, intimate, loving, trusting or nurturing">
 					</a>
-					<a class="btn btn-paceful" href="/#/" role="button" title="Content, thoughtful, intimate, loving, trusting or nurturing" ng-click="searchFilmByMood('Peaceful')">Peaceful</a>
+					<a class="btn btn-paceful" href="/#/" role="button" title="Content, thoughtful, intimate, loving, trusting or nurturing" ng-click="filterSelectedFeelsMood('Peaceful')">Peaceful</a>
 				</div>
 			</li>
 			<li>
 				<div class="individual-icon">
-					<a href="/#/" ng-click="searchFilmByMood('Sad')">
+					<a href="/#/" ng-click="filterSelectedFeelsMood('Sad')">
 						<img class="mood-icon" src="../../img/Sad.png" alt="Sad icon" href="" title="Guilty, ashamed, depressed, lonely, bored or sleepy">
 					</a>
-					<a class="btn btn-sad" href="/#/" role="button" title="Guilty, ashamed, depressed, lonely, bored or sleepy" ng-click="searchFilmByMood('Sad')">Sad</a>
+					<a class="btn btn-sad" href="/#/" role="button" title="Guilty, ashamed, depressed, lonely, bored or sleepy" ng-click="filterSelectedFeelsMood('Sad')">Sad</a>
 				</div>
 			</li>
 		</ul>
 	</div>
 
+	<div class="questions-to-filter">
+		<div id="question1">
+			<p>Step 1/3</p>
+			<p>Do you want to watch a film that makes you feel your mood or the opposite?</p>
+			<a href="/#/" ng-click="filterSetMoodFilm('mood')">My mood</a>
+			<a href="/#/" ng-click="filterSetMoodFilm('opposite')">The opposite</a>
+		</div>
+		<div id="question2">
+			<p>Step 2/3</p>
+			<p>with a duration of...</p>
+			<a href="/#/" ng-click="filterSetDurationFilm('0','300')">It doesn't matter</a>
+			<a href="/#/" ng-click="filterSetDurationFilm('0','90')">Less than 90'</a>
+			<a href="/#/" ng-click="filterSetDurationFilm('90','300')">More than 90'</a>
+			<a href="/#/" ng-click="filterSetDurationFilm('90','120')">Between 90' and 120'</a>
+			<a href="/#/" ng-click="filterSetDurationFilm('120','300')">More than 120'</a>
+		</div>
+		<div id="question3">
+			<p>Step 3/3</p>
+			<p>and produced on...</p>
+			<a href="/#/" ng-click="filterSetProduced('0000')">Any time</a>
+			<a href="/#/" ng-click="filterSetProduced('1980')">Older than 1980</a>
+			<a href="/#/" ng-click="filterSetProduced('1990')">Older than 1990</a>
+			<a href="/#/" ng-click="filterSetProduced('2000')">Older than 2000</a>
+			<a href="/#/" ng-click="filterSetProduced('2010')">Older than 2010</a>
+		</div>
+		<div id="question4">
+			<a href="/#/" ng-click="searchFilmWithFilter()">I'll have luck</a>
+		</div>
+	</div>
+
+
 	<div class="to-move-scroll"></div>
-
-
-	<!-- <div class="questions-to-filter">
-		<p>Do you want to see a film that makes you feel your mood or the opposite?</p>
-		<a href="">My mood</a>
-		<a href="">The opposite</a>
-	</div>
-	<div class="questions-to-filter">
-		<p>with a duration of...</p>
-		<a href="">It doesn't matter</a>
-		<a href="">Less than 90'</a>
-		<a href="">More than 90'</a>
-		<a href="">More than 120'</a>
-	</div>
-	<div class="questions-to-filter">
-		<p>and produced on...</p>
-		<a href="">All times</a>
-		<a href="">Older than 1980</a>
-		<a href="">Older than 1990</a>
-		<a href="">Older than 2000</a>
-		<a href="">Older than 2010</a>
-	</div> -->
-
 
 	<div class="list-films">
 		<div class="insert-text"></div>
