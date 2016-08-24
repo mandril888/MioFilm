@@ -1,12 +1,12 @@
 angular.module( 'homeModule', [ ] )
-	.controller( 'homeController' , function ( $scope, $http, homeService ) {
+	.controller( 'homeController' , function ( $scope, $http, homeService, $q ) {
 
 		$scope.imageNotFoundCover = '../../img/image-not-found-cover.jpg';
 		$scope.infoFilmSearched = "";
 
 
 		// Estos valores vendrán del filtro y tendrán que entrar por los argumentos de la función
-			var numberFilmsToSearch = 3;
+			var numberFilmsToSearch = 6;
 			var numVotesMinimum = 10;
 			var rateToFilter = 5;
 			var yearToFilter = 2000;
@@ -28,7 +28,6 @@ angular.module( 'homeModule', [ ] )
 			$('.list-films').css('display', 'flex')
 			$('.insert-text').html('<h1>You have searched: <span class="item-searched">' + mood + '</span></h1>')
 
-			console.log(mood)
 			var moodNumber;
 
 			if ( mood === 'Sad' ) {
@@ -45,49 +44,62 @@ angular.module( 'homeModule', [ ] )
 				moodNumber = '99|10751|14|36|10402|10749';
 			}
 
+			var aFilmsFiltered = [];
+
 			homeService.getInfoFilmByMood( moodNumber )
 				.then( function( data ) {
-					filterFilms( data )
+					filterFilms( data, moodNumber, aFilmsFiltered )
 				})
 		}
 
-		function filterFilms ( dataFilmSearched ) {
+		function filterFilms ( dataFilmSearched, moodNumber, aFilmsFiltered ) {
 
-			var counterFilms = 0;
-			var counterFilmsReal = 0;
-			var aFilmsFiltered = [];
+			var promisesDetailsFilms = [];
 
-			console.log('********************************************************************************************************************************-----------------------------------------------------------------------------------------------------------------------************************************************************************')
+			console.log('********************************************************************************************************************************************************************************************************')
 			console.log(dataFilmSearched.data.results)
 			dataFilmSearched.data.results.forEach(function (item, i) {
+
 				var singleFilmSearched = item;
 				console.log('------------- SINGLE FILM SEARCHED -------------')
-				console.log(singleFilmSearched)
+				// console.log(singleFilmSearched)
 				if( singleFilmSearched.vote_count >= numVotesMinimum ) {
 					if( singleFilmSearched.vote_average >= rateToFilter ){
 						var yearShootFilm = singleFilmSearched.release_date.slice(0,4);
 						if( yearShootFilm >= yearToFilter ) {
-
-							counterFilms += 1;
-							console.log('******************  ' + counterFilms + '  ******************')
-							if( counterFilms <= numberFilmsToSearch ) {
-								counterFilmsReal += 1;
-								console.log('++++++++++++++++++++++++' + counterFilmsReal + '++++++++++++++++++++++++')
-								return aFilmsFiltered.push( singleFilmSearched );
-							}
+							var promise = homeService.getSpecificationsFilm( singleFilmSearched.id );
+							promisesDetailsFilms.push(promise);
 						}
 					}
 				}
 			})
 
-			// if ( counterFilms < numberFilmsToSearch ) {
-			// 	console.log('123456789  ENTERED IN THE SECOND HOME_SERVICE  987654321')
-			// 	homeService.getInfoFilmByMood( moodNumber )
-			// }
+			$q.all( promisesDetailsFilms )
+				.then( function ( aDataFilmSearched ){
+					console.log('+++++++++++++++++++  ' + aDataFilmSearched.length + '  +++++++++++++++++++')
+					aDataFilmSearched.forEach( function (item, i) {
+						var durationFilm = item.data.runtime;
+						console.log(durationFilm);
+
+						if ( durationFilm >= durationToFilter) {
+							if( aFilmsFiltered.length < numberFilmsToSearch ) {
+								console.log(item)
+								return aFilmsFiltered.push( item.data );
+							}
+						}
+					})
+				})
+
+
+			if ( aFilmsFiltered.length < numberFilmsToSearch ) {
+				console.log('123456789  ENTERED IN THE SECOND HOME_SERVICE  987654321')
+				homeService.getInfoFilmByMood( moodNumber )
+					.then( function( data ) {
+						filterFilms( data, moodNumber, aFilmsFiltered )
+					})
+			}
 
 			$scope.infoFilmSearched = aFilmsFiltered;
-			// console.log($scope.infoFilmSearched);
-
 		}
 
 		$('button').on('click', function(event){

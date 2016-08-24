@@ -12,7 +12,6 @@ angular.module( 'homeService', [ ] )
 
 		function getInfoFilmByMood ( moodNumber ) {
 
-			var allPromises;
 			var randomPage = Math.floor(Math.random() * 1000) + 1;
 
 			var mapObj = {
@@ -29,9 +28,20 @@ angular.module( 'homeService', [ ] )
 
 		}
 
+
+		// REVISAR - esta petición es la misma que la de specificationsService
+		var urlToGetInfoFilm = 'http://api.themoviedb.org/3/movie/<ID_MOVIE>?api_key=71bd8c83c5cc06c197435d2165ac52e4';
+		function getSpecificationsFilm ( idFilmToSearch ) {
+			var urlToSearchFilmChanged = urlToGetInfoFilm.replace('<ID_MOVIE>', idFilmToSearch)
+			console.log(urlToSearchFilmChanged)
+			return $http.get( urlToSearchFilmChanged ) // return a promise
+		}
+
+
 		return {
 			getInfoFilm : getInfoFilm,
-			getInfoFilmByMood : getInfoFilmByMood
+			getInfoFilmByMood : getInfoFilmByMood,
+			getSpecificationsFilm : getSpecificationsFilm
 		}
 
 	})
