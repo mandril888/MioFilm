@@ -57,6 +57,7 @@
 
 		img {
 			width: 200px;
+			height: 300px;
 			margin-bottom: 5px;
 			border-radius: 5px;
 		}
@@ -99,8 +100,8 @@
 						width: 81px;
 					}
 
-					img {
-						width:50px;
+					.mood-icon {
+						width: 50px;
 					}
 				}
 			}
@@ -111,20 +112,42 @@
 .btn-mad {
 	background: $mad-red;
 }
+.btn-mad:hover {
+	background: darken($mad-red, 10%);
+}
 .btn-scared {
 	background: $scared-grey;
+}
+.btn-scared:hover {
+	background: darken($scared-grey, 10%);
 }
 .btn-joyful {
 	background: $joyful-purple;
 }
+.btn-joyful:hover {
+	background: darken($joyful-purple, 10%);
+}
 .btn-powerful {
 	background: $powerful-orange;
+}
+.btn-powerful:hover {
+	background: darken($powerful-orange, 10%);
 }
 .btn-paceful {
 	background: $paceful-blue;
 }
+.btn-paceful:hover {
+	background: darken($paceful-blue, 10%);
+}
 .btn-sad {
 	background: $sad-blue;
+}
+.btn-sad:hover {
+	background: darken($sad-blue, 10%);
+}
+
+.mood-icon:hover {
+	border: 1px solid white;
 }
 
 .star {

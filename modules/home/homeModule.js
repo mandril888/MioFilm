@@ -1,6 +1,7 @@
 angular.module( 'homeModule', [ ] )
 	.controller( 'homeController' , function ( $scope, $http, homeService ) {
 
+		$scope.imageNotFoundCover = '../../img/image-not-found-cover.jpg';
 		$scope.infoFilmSearched = "";
 
 		$scope.submit = function() {
@@ -44,5 +45,24 @@ angular.module( 'homeModule', [ ] )
 					console.log($scope.infoFilmSearched);
 				})
 		}
+
+		$('button').on('click', function(event){
+			$('html, body').animate({
+				scrollTop: $('.to-move-scroll').offset().top
+			}, 500);
+		});
+
+		$('a').on('click', function(event){
+			event.preventDefault();
+			$('html, body').animate({
+				scrollTop: $('.to-move-scroll').offset().top
+			}, 500);
+		});
+
+		$('.go-top').on('click', function(event){
+			event.preventDefault();
+			$('html, body').animate({
+				scrollTop: 0 }, 500);
+		});
 
 	})
