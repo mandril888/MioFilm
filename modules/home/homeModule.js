@@ -4,6 +4,15 @@ angular.module( 'homeModule', [ ] )
 		$scope.imageNotFoundCover = '../../img/image-not-found-cover.jpg';
 		$scope.infoFilmSearched = "";
 
+
+		// Estos valores vendrán del filtro y tendrán que entrar por los argumentos de la función
+			var numberFilmsToSearch = 3;
+			var numVotesMinimum = 10;
+			var rateToFilter = 5;
+			var yearToFilter = 2000;
+			var durationToFilter = 90;
+
+
 		$scope.submit = function() {
 			$('.list-films').css('display', 'flex')
 			$('.insert-text').html('<h1>You have searched: <span class="item-searched">'+ $scope.filmToSearch + '</span></h1>')
@@ -20,8 +29,6 @@ angular.module( 'homeModule', [ ] )
 			$('.insert-text').html('<h1>You have searched: <span class="item-searched">' + mood + '</span></h1>')
 
 			console.log(mood)
-			var randomPage1 = Math.floor(Math.random() * 1000) + 1;
-			var randomPage2 = Math.floor(Math.random() * 1000) + 1;
 			var moodNumber;
 
 			if ( mood === 'Sad' ) {
@@ -38,12 +45,49 @@ angular.module( 'homeModule', [ ] )
 				moodNumber = '99|10751|14|36|10402|10749';
 			}
 
-			homeService.getInfoFilmByMood( moodNumber, randomPage1, randomPage2 )
-				.then( function ( dataFilmSearched ){
-					console.log(dataFilmSearched)
-					$scope.infoFilmSearched = dataFilmSearched[0].data.results;
-					console.log($scope.infoFilmSearched);
+			homeService.getInfoFilmByMood( moodNumber )
+				.then( function( data ) {
+					filterFilms( data )
 				})
+		}
+
+		function filterFilms ( dataFilmSearched ) {
+
+			var counterFilms = 0;
+			var counterFilmsReal = 0;
+			var aFilmsFiltered = [];
+
+			console.log('********************************************************************************************************************************-----------------------------------------------------------------------------------------------------------------------************************************************************************')
+			console.log(dataFilmSearched.data.results)
+			dataFilmSearched.data.results.forEach(function (item, i) {
+				var singleFilmSearched = item;
+				console.log('------------- SINGLE FILM SEARCHED -------------')
+				console.log(singleFilmSearched)
+				if( singleFilmSearched.vote_count >= numVotesMinimum ) {
+					if( singleFilmSearched.vote_average >= rateToFilter ){
+						var yearShootFilm = singleFilmSearched.release_date.slice(0,4);
+						if( yearShootFilm >= yearToFilter ) {
+
+							counterFilms += 1;
+							console.log('******************  ' + counterFilms + '  ******************')
+							if( counterFilms <= numberFilmsToSearch ) {
+								counterFilmsReal += 1;
+								console.log('++++++++++++++++++++++++' + counterFilmsReal + '++++++++++++++++++++++++')
+								return aFilmsFiltered.push( singleFilmSearched );
+							}
+						}
+					}
+				}
+			})
+
+			// if ( counterFilms < numberFilmsToSearch ) {
+			// 	console.log('123456789  ENTERED IN THE SECOND HOME_SERVICE  987654321')
+			// 	homeService.getInfoFilmByMood( moodNumber )
+			// }
+
+			$scope.infoFilmSearched = aFilmsFiltered;
+			// console.log($scope.infoFilmSearched);
+
 		}
 
 		$('button').on('click', function(event){
