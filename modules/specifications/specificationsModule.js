@@ -9,7 +9,6 @@ angular.module( 'specificationsModule', [ ] )
 		specificationsService.getSpecificationsFilm( filmId )
 			.then( function ( dataFilmSearched ){
 				$scope.specificationsFilmSearched = dataFilmSearched.data;
-				console.log($scope.specificationsFilmSearched);
 			})
 
 	})

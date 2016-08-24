@@ -6,11 +6,11 @@ angular.module( 'homeModule', [ ] )
 
 
 		// Estos valores vendrán del filtro y tendrán que entrar por los argumentos de la función
-			var numberFilmsToSearch = 6;
-			var numVotesMinimum = 10;
-			var rateToFilter = 5;
-			var yearToFilter = 2000;
-			var durationToFilter = 90;
+		var numberFilmsToSearch = 6;
+		var numVotesMinimum = 10;
+		var rateToFilter = 5;
+		var yearToFilter = 2000;
+		var durationToFilter = 90;
 
 
 		$scope.submit = function() {
@@ -53,16 +53,9 @@ angular.module( 'homeModule', [ ] )
 		}
 
 		function filterFilms ( dataFilmSearched, moodNumber, aFilmsFiltered ) {
-
 			var promisesDetailsFilms = [];
-
-			console.log('********************************************************************************************************************************************************************************************************')
-			console.log(dataFilmSearched.data.results)
 			dataFilmSearched.data.results.forEach(function (item, i) {
-
 				var singleFilmSearched = item;
-				console.log('------------- SINGLE FILM SEARCHED -------------')
-				// console.log(singleFilmSearched)
 				if( singleFilmSearched.vote_count >= numVotesMinimum ) {
 					if( singleFilmSearched.vote_average >= rateToFilter ){
 						var yearShootFilm = singleFilmSearched.release_date.slice(0,4);
@@ -76,14 +69,10 @@ angular.module( 'homeModule', [ ] )
 
 			$q.all( promisesDetailsFilms )
 				.then( function ( aDataFilmSearched ){
-					console.log('+++++++++++++++++++  ' + aDataFilmSearched.length + '  +++++++++++++++++++')
 					aDataFilmSearched.forEach( function (item, i) {
 						var durationFilm = item.data.runtime;
-						console.log(durationFilm);
-
 						if ( durationFilm >= durationToFilter) {
 							if( aFilmsFiltered.length < numberFilmsToSearch ) {
-								console.log(item)
 								return aFilmsFiltered.push( item.data );
 							}
 						}
@@ -92,7 +81,6 @@ angular.module( 'homeModule', [ ] )
 
 
 			if ( aFilmsFiltered.length < numberFilmsToSearch ) {
-				console.log('123456789  ENTERED IN THE SECOND HOME_SERVICE  987654321')
 				homeService.getInfoFilmByMood( moodNumber )
 					.then( function( data ) {
 						filterFilms( data, moodNumber, aFilmsFiltered )

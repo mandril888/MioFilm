@@ -6,26 +6,20 @@ angular.module( 'homeService', [ ] )
 
 		function getInfoFilm ( filmToSearch ) {
 			var urlToSearchFilmChanged = urlToSearchFilm.replace('<SEARCH>', filmToSearch)
-			console.log(urlToSearchFilmChanged)
 			return $http.get( urlToSearchFilmChanged )
 		}
 
 		function getInfoFilmByMood ( moodNumber ) {
-
 			var randomPage = Math.floor(Math.random() * 1000) + 1;
-
 			var mapObj = {
 				'<MOOD_NUM>': moodNumber,
 				'<PAGE>': randomPage
 			};
-			console.log(mapObj)
 			var urlToSearchFilmByMoodChanged = urlToSearchFilmByMood.replace(/<MOOD_NUM>|<PAGE>/gi, function(matched){
 				return mapObj[matched];
 			});
-			console.log(urlToSearchFilmByMoodChanged)
 
 			return promise = $http.get( urlToSearchFilmByMoodChanged )
-
 		}
 
 
@@ -33,7 +27,6 @@ angular.module( 'homeService', [ ] )
 		var urlToGetInfoFilm = 'http://api.themoviedb.org/3/movie/<ID_MOVIE>?api_key=71bd8c83c5cc06c197435d2165ac52e4';
 		function getSpecificationsFilm ( idFilmToSearch ) {
 			var urlToSearchFilmChanged = urlToGetInfoFilm.replace('<ID_MOVIE>', idFilmToSearch)
-			console.log(urlToSearchFilmChanged)
 			return $http.get( urlToSearchFilmChanged ) // return a promise
 		}
 
