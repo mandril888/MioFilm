@@ -36,6 +36,10 @@ angular.module( 'homeModule', [ ] )
 		$scope.filterSelectedFeelsMood = function( mood ) {
 			$('.questions-to-filter').css('display', 'block');
 			$('#question1').css('display', 'block');
+			$('.questions-to-filter').animate({
+				'height': '100%',
+				'padding': '30px 20%'
+			}, 2000);
 			moodFeeling = mood;
 		}
 
@@ -134,6 +138,7 @@ angular.module( 'homeModule', [ ] )
 			}, 500);
 		});
 
+		//REVISAR - no pueden ser todos los tags a
 		$('a').on('click', function(event){
 			event.preventDefault();
 			$('html, body').animate({
@@ -146,5 +151,4 @@ angular.module( 'homeModule', [ ] )
 			$('html, body').animate({
 				scrollTop: 0 }, 500);
 		});
-
 	})
