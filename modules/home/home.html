@@ -95,7 +95,7 @@
 		<a class="btn-step" href="/#/" ng-click="filterSetProduced('2010')">Older than 2010</a>
 	</div>
 	<div id="question4">
-		<a href="/#/" ng-click="searchFilmWithFilter()">I'll have luck</a>
+		<a href="/#/" ng-click="searchFilmWithFilter()" class="luck-search">I'll have luck</a>
 	</div>
 </div>
 
@@ -115,7 +115,13 @@
 			</a>
 			<p><em>{{ movies.release_date | date : 'yyyy' }}</em> &nbsp; &nbsp; <i class="glyphicon glyphicon-star-empty star"></i> {{ movies.vote_average }}</p>
 		</div>
-		<a href="top" class="go-top"><i class="glyphicon glyphicon-chevron-up"></i> Go top <i class="glyphicon glyphicon-chevron-up"></i></a>
+
+		<div class="bottom-films">
+			<div>
+				<a href="/#/" ng-click="searchFilmWithFilter()" class="repeat-search">Repeat search</a>
+				<a href="top" class="go-top"><i class="glyphicon glyphicon-chevron-up"></i> Go top <i class="glyphicon glyphicon-chevron-up"></i></a>
+			</div>
+		</div>
 	</div>
 
 </div>

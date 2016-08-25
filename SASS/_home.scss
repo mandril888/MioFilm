@@ -105,7 +105,7 @@
 					}
 
 					.mood-icon {
-						width: 50px;
+						width: 65px;
 					}
 				}
 			}
@@ -168,6 +168,7 @@
 	background-color: $turquoise-blue;
 	padding: 0 -800px;
 	margin-bottom: 40px;
+	box-shadow: inset 0 0 25px gray;
 }
 
 
@@ -180,6 +181,10 @@
 	}
 }
 
+#question4 {
+	padding-top: 50px;
+}
+
 .step {
 	margin-left: 500px;
 	margin-bottom: 20px;
@@ -187,15 +192,81 @@
 
 .question-step {
 	margin-bottom: 30px;
+	font-size: 20px;
 }
 
 .btn-step {
 	border: 2px solid white;
 	border-radius: 5px;
 	padding: 5px;
-	margin-left: 20px;
+	margin-right: 20px;
+
+	&:hover {
+		background: darken($turquoise-blue, 10%);
+		text-decoration: none;
+	}
+	&:focus {
+		text-decoration: none;
+	}
 }
-.btn-step:hover {
-	background: darken($turquoise-blue, 10%);
-	text-decoration: none;
+
+.luck-search {
+	border: 2px solid white;
+	border-radius: 5px;
+	padding: 15px;
+	font-size: 35px;
+
+	&:hover {
+		background: darken($turquoise-blue, 10%);
+		text-decoration: none;
+	}
+	&:focus {
+		text-decoration: none;
+	}
+}
+
+.bottom-films {
+	clear: both;
+	display: inline-block;
+	width: 80%;
+	margin-top: 20px;
+
+	div {
+		display: flex;
+		justify-content: space-around;
+
+		.repeat-search {
+			float: left;
+			color: $turquoise-blue;
+			font-size: 1.3em;
+			&:hover {
+				color: $turquoise-blue;
+			}
+			@media screen and (max-width: 460px){
+				clear: both;
+				display: inline-block;
+				margin: 10px 0;
+				text-align: center;
+			}
+		}
+
+		.go-top {
+			color: $turquoise-blue;
+			float: left;
+			font-size: 1.3em;
+			&:hover {
+				color: $turquoise-blue;
+			}
+			@media screen and (max-width: 460px){
+				clear: both;
+				display: inline-block;
+				text-align: center;
+			}
+		}
+
+		@media screen and (max-width: 460px){
+			clear: both;
+			display: inline-block;
+		}
+	}
 }
