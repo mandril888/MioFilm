@@ -46,6 +46,7 @@ angular.module( 'homeModule', [ ] )
 			$('#question2').css('display', 'none');
 			$('#question3').css('display', 'none');
 			$('#question4').css('display', 'none');
+
 			moodFeeling = mood;
 		}
 
@@ -57,6 +58,7 @@ angular.module( 'homeModule', [ ] )
 			$('#question2').delay(1500).animate({
 				'padding-left': '950px'
 			}, 1500);
+
 			if ( info === 'mood') {
 				moodSearch = moodFeeling;
 			} else {
@@ -65,15 +67,27 @@ angular.module( 'homeModule', [ ] )
 		}
 
 		$scope.filterSetDurationFilm = function ( minDuration, maxDuration ) {
-			$('#question2').css('display', 'none');
+			$('#question2').animate({
+				'padding-left': '1800px'
+			}, 1500).hide(0);
 			$('#question3').css('display', 'block');
+			$('#question3').delay(1500).animate({
+				'padding-left': '950px'
+			}, 1500);
+
 			minTime = minDuration;
 			maxTime = maxDuration;
 		}
 
 		$scope.filterSetProduced = function ( timeProduced ) {
-			$('#question3').css('display', 'none');
+			$('#question3').animate({
+				'padding-left': '1800px'
+			}, 1500).hide(0);
 			$('#question4').css('display', 'block');
+			$('#question4').delay(1500).animate({
+				'padding-left': '950px'
+			}, 1500);
+
 			yearLimit = timeProduced;
 		}
 

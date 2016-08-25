@@ -179,3 +179,23 @@
 		color: white;
 	}
 }
+
+.step {
+	margin-left: 500px;
+	margin-bottom: 20px;
+}
+
+.question-step {
+	margin-bottom: 30px;
+}
+
+.btn-step {
+	border: 2px solid white;
+	border-radius: 5px;
+	padding: 5px;
+	margin-left: 20px;
+}
+.btn-step:hover {
+	background: darken($turquoise-blue, 10%);
+	text-decoration: none;
+}
