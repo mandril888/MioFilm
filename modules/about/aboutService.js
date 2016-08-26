@@ -1,3 +1,3 @@
 angular.module( 'aboutService', [ ] )
-    .factory('aboutService', function($http) {
-    }) 
+	.factory('aboutService', function($http) {
+	}) 

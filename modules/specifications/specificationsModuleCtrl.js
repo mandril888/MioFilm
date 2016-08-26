@@ -1,4 +1,4 @@
-angular.module( 'specificationsModule', [ ] )
+angular.module( 'specificationsModuleCtrl', [ ] )
 	.controller( 'specificationsController' , function ( $scope, $http, $routeParams, specificationsService ) {
 
 		$scope.imageNotFoundCover = '../../img/image-not-found-cover.jpg';

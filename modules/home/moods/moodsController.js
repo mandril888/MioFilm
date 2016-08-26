@@ -1,13 +1,15 @@
-angular.module( 'homeModule', [ ] )
-	.controller( 'homeController' , function ( $scope, $http, homeService, $q ) {
+angular.module( 'homeModuleCtrl' )
+	.controller( 'moodsController' , function ( $scope, $http, homeService, $q ) {
 
 		$scope.imageNotFoundCover = '../../img/image-not-found-cover.jpg';
 		$scope.infoFilmSearched = "";
 
+		//Predefined values to the Filter
 		var numberFilmsToSearch = 6;
 		var numVotesMinimum = 10;
 		var rateToFilter = 5;
 
+		//Input values of the Filter
 		var moodFeeling = "";
 		var moodSearch = "";
 		var minTime = "";
@@ -21,17 +23,6 @@ angular.module( 'homeModule', [ ] )
 			Powerful: 'Joyful',
 			Peaceful: 'Sad',
 			Sad: 'Peaceful',
-		}
-
-		$scope.submit = function() {
-			$('.list-films').css('display', 'flex')
-			$('.insert-text').html('<h1>You have searched: <span class="item-searched">' + moodSearch + '</span></h1>')
-			$('.questions-to-filter').css('display', 'none');
-
-			homeService.getInfoFilm( $scope.filmToSearch )
-				.then( function ( dataFilmSearched ){
-					$scope.infoFilmSearched = dataFilmSearched.data.results;
-				})
 		}
 
 		$scope.filterSelectedFeelsMood = function( mood ) {

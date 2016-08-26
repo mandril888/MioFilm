@@ -1,4 +1,4 @@
-<div class="bg-searcher">
+<div ng-controller="searcherController" class="bg-searcher">
 	<p class="tagline-searcher androgyne-font">feel the movies</p>
 	<form ng-submit="submit()" class="col-sm-6 col-sm-offset-3 input-group">
 		<div class="input-group">
@@ -10,7 +10,7 @@
 	</form>
 </div>
 
-<div class="container">
+<div class="container" ng-controller="moodsController">
 
 	<div class="icons-feelings">
 		<h1 class="androgyne-font">How do you feel today?</h1>

@@ -43,6 +43,8 @@ module.exports = function(grunt) {
 			    files: ['JS/*',
 			        	'modules/about/*.js',
 			        	'modules/home/*.js',
+			        	'modules/home/searcher/*.js',
+			        	'modules/home/moods/*.js',
 			        	'modules/specifications/*.js',],
 			    tasks: ['concat']
 			}
@@ -53,6 +55,8 @@ module.exports = function(grunt) {
 			        	'Js/*',
 			        	'modules/about/*.js',
 			        	'modules/home/*.js',
+			        	'modules/home/searcher/*.js',
+			        	'modules/home/moods/*.js',
 			        	'modules/specifications/*.js',
 			        ],
 			    dest:'dist/scripts.min.js'
