@@ -38,7 +38,7 @@ angular.module( 'homeModule', [ ] )
 			$('.questions-to-filter').css('display', 'block');
 			$('.questions-to-filter').animate({
 				'height': '250px',
-				'padding': '50px -800px'
+				'padding': '50px 0 0 -800px'
 			}, 2000);
 			$('#question1').css('display', 'block');
 			$('#question1').delay(1000).animate({
@@ -98,6 +98,7 @@ angular.module( 'homeModule', [ ] )
 		$scope.searchFilmWithFilter = function() {
 			$('.list-films').css('display', 'flex')
 			$('.insert-text').html('<h1>You have searched: <span class="item-searched">' + moodSearch + '</span></h1>')
+			$('.repeat-search').css('display', 'flex')
 
 			var moodNumber;
 

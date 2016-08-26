@@ -61,6 +61,7 @@ html {
 		display: inherit;
 		margin: 5px auto;
 		height: 30px;
+		padding-left: 25px;
 	}
 }
 
@@ -108,17 +109,25 @@ footer {
 	}
 
 	@media screen and (max-width: 410px){
-		display: inline-block;
+		clear: both;
+		display: block;
 	}
 }
 
 .contact {
 	float: left;
 
+	a {
+		&:hover{
+			color: white;
+		}
+	}
+
 	@media screen and (max-width: 410px){
 		display: inline-block;
-		margin-left: 20%;
-		margin-right: 100px;
+		width: 100%;
+		margin: 0 auto;
+		padding: 0 20% 15px;
 		text-align: center;
 	}
 }
@@ -128,7 +137,9 @@ footer {
 
 	@media screen and (max-width: 410px){
 		display: inline-block;
-		margin-left: 26%;
+		width: 100%;
+		margin: 0 auto;
+		padding: 0 20% 15px;
 		text-align: center;
 	}
 }
