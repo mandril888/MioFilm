@@ -1,8 +1,7 @@
 angular.module( 'homeModuleCtrl' )
-	.controller( 'questionsController' , function ( $rootScope, $scope, $http, questionsService, $q ) {
+	.controller( 'question4Controller' , function ( $rootScope, $scope, $http, questionsService, $q ) {
 
 		//Input values of the Filter
-		var moodFeelingRecived = '';
 		var moodSearch = "";
 		var minTime = "";
 		var maxTime = "";
@@ -13,67 +12,11 @@ angular.module( 'homeModuleCtrl' )
 		var numVotesMinimum = 10;
 		var rateToFilter = 5;
 
-		var oMoodsOpposite = {
-			Mad: 'Scared',
-			Scared: 'Mad',
-			Joyful: 'Powerful',
-			Powerful: 'Joyful',
-			Peaceful: 'Sad',
-			Sad: 'Peaceful',
-		}
-
-		$scope.$on('moodFeelingSend', function(evt, message){
-			moodFeelingRecived = message;
-			console.log('recived: '+moodFeelingRecived)
-		})
-
-		$scope.filterSetMoodFilm = function ( info ) {
-			$('#question1').animate({
-				'padding-left': '2200px'
-			}, 1500).hide(0).animate({
-				'padding-left': '0'
-			}, 50);
-			$('#question2').css('display', 'block');
-			$('#question2').delay(1500).animate({
-				'padding-left': '950px'
-			}, 1500);
-
-			if ( info === 'mood') {
-				moodSearch = moodFeelingRecived;
-			} else {
-				moodSearch = oMoodsOpposite[moodFeelingRecived];
-			}
-		}
-
-		$scope.filterSetDurationFilm = function ( minDuration, maxDuration ) {
-			$('#question2').animate({
-				'padding-left': '2200px'
-			}, 1500).hide(0);
-			$('#question3').css('display', 'block');
-			$('#question3').delay(1500).animate({
-				'padding-left': '950px'
-			}, 1500);
-
-			minTime = minDuration;
-			maxTime = maxDuration;
-		}
-
-		$scope.filterSetProduced = function ( timeProduced ) {
-			$('#question3').animate({
-				'padding-left': '2200px'
-			}, 1500).hide(0);
-			$('#question4').css('display', 'block');
-			$('#question4').delay(1500).animate({
-				'padding-left': '1150px'
-			}, 1500);
-
-			yearLimit = timeProduced;
-		}
-
 		$scope.searchFilmWithFilter = function() {
 			$('.list-films').css('display', 'flex')
 			$('.insert-text').html('<h1>You have searched: <span class="item-searched">' + moodSearch + '</span></h1>')
 			$('.repeat-search').css('display', 'flex')
+			$('#question4').html("<a href='/#/' ng-click='searchFilmWithFilter()' class='luck-search'>Repeat the search</a>");
 
 			var moodNumber;
 
@@ -137,18 +80,12 @@ angular.module( 'homeModuleCtrl' )
 			$rootScope.$broadcast('infoFilmSearchedByMood', aFilmsFiltered);
 		}
 
-		$('button').on('click', function(event){
-			$('html, body').animate({
-				scrollTop: $('.to-move-scroll').offset().top
-			}, 1000);
-		});
-
 		//REVISAR - no pueden ser todos los tags a
 		$('a').on('click', function(event){
 			event.preventDefault();
 			$('html, body').animate({
 				scrollTop: $('.to-move-scroll').offset().top
-			}, 1000);
+			}, 1500);
 		});
 
 

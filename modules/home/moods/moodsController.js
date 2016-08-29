@@ -21,4 +21,11 @@ angular.module( 'homeModuleCtrl' )
 			console.log('moodFeeling: '+moodFeelingSend)
 		}
 
+		$('a').on('click', function(event){
+			event.preventDefault();
+			$('html, body').animate({
+				scrollTop: $('.to-move-scroll').offset().top
+			}, 1500);
+		});
+
 	})
