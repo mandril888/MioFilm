@@ -1,7 +1,6 @@
 angular.module( 'homeModuleCtrl' )
-	.controller( 'moodsController' , function ( $scope, $http, homeService, $q ) {
+	.controller( 'moodsController' , function ( $scope, $http, moodsService, $q ) {
 
-		$scope.imageNotFoundCover = '../../img/image-not-found-cover.jpg';
 		$scope.infoFilmSearched = "";
 
 		//Predefined values to the Filter
@@ -167,9 +166,4 @@ angular.module( 'homeModuleCtrl' )
 			}, 500);
 		});
 
-		$('.go-top').on('click', function(event){
-			event.preventDefault();
-			$('html, body').animate({
-				scrollTop: 0 }, 500);
-		});
 	})

@@ -10,7 +10,7 @@
 	</form>
 </div>
 
-<div class="container" ng-controller="moodsController">
+<div class="container"> <!-- ng-controller="moodsController"> -->
 
 	<div class="icons-feelings">
 		<h1 class="androgyne-font">How do you feel today?</h1>
@@ -104,9 +104,11 @@
 
 	<div class="to-move-scroll"></div>
 
-	<div class="list-films">
-		<div class="insert-text"></div>
-		<div class="film" ng-repeat="movies in infoFilmSearched">
+	<div class="list-films" ng-controller="listFilmsController">
+		<div class="insert-text">
+			<h1>You have searched: <span class="item-searched"> {{ itemSearched }}</span></h1>
+		</div>
+		<div class="film" ng-repeat="movies in infoFilmToList">
 			<a href="/#/specifications/{{movies.id}}" target="_blank">
 				<img ng-src="http://image.tmdb.org/t/p/w500/{{ movies.poster_path}}" altSrc="{{imageNotFoundCover}}" onerror="this.src = $(this).attr('altSrc')">
 			</a>
