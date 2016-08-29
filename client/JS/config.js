@@ -2,15 +2,15 @@ angular.module( 'config', [ ] )
 	.config( function( $routeProvider ){
 			$routeProvider
 				.when('/',{
-					templateUrl: 'modules/home/home.html',
+					templateUrl: 'client/modules/home/home.html',
 					// controller: 'homeController'
 				})
 				.when('/home',{
-					templateUrl: 'modules/home/home.html',
+					templateUrl: 'client/modules/home/home.html',
 					// controller: 'homeController'
 				})
 				.when('/specifications/:FILMID',{
-					templateUrl: 'modules/specifications/specifications.html'
+					templateUrl: 'client/modules/specifications/specifications.html'
 				})
 				// .when('/about',{
 				// 	templateUrl: 'modules/about/about.html',

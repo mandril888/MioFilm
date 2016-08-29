@@ -12,7 +12,7 @@ module.exports = function(grunt) {
 					style: 'compressed',
 				},
 				files: { 
-					'dist/styles.css': 'SASS/styles.scss',
+					'client/dist/styles.css': 'client/SASS/styles.scss',
 				}
 			}
 		},
@@ -28,7 +28,7 @@ module.exports = function(grunt) {
                 ]
             },
             dist: {
-                src: 'dist/*.css'
+                src: 'client/dist/*.css'
             }
         },
 		watch: {
@@ -36,42 +36,42 @@ module.exports = function(grunt) {
 				livereload: true
 			},
 			css: {
-				files: 'sass/*.scss',
+				files: 'client/sass/*.scss',
 				tasks: ['sass', 'postcss:dist']
 			},
 			js: {
-			    files: ['JS/*',
-			        	'modules/about/*.js',
-			        	'modules/home/*.js',
-			        	'modules/home/searcher/*.js',
-			        	'modules/home/moods/*.js',
-			        	'modules/home/list-films/*.js',
-			        	'modules/home/questions/*.js',
-			        	'modules/home/questions/handlers/*.js',
-			        	'modules/specifications/*.js',],
+			    files: ['client/JS/*',
+			        	'client/modules/about/*.js',
+			        	'client/modules/home/*.js',
+			        	'client/modules/home/searcher/*.js',
+			        	'client/modules/home/moods/*.js',
+			        	'client/modules/home/list-films/*.js',
+			        	'client/modules/home/questions/*.js',
+			        	'client/modules/home/questions/handlers/*.js',
+			        	'client/modules/specifications/*.js',],
 			    tasks: ['concat']
 			}
 		},
 		concat:{
 			js:{
 				src:[
-			        	'Js/*',
-			        	'modules/about/*.js',
-			        	'modules/home/*.js',
-			        	'modules/home/searcher/*.js',
-			        	'modules/home/moods/*.js',
-			        	'modules/home/list-films/*.js',
-			        	'modules/home/questions/*.js',
-			        	'modules/home/questions/handlers/*.js',
-			        	'modules/specifications/*.js',
+			        	'client/Js/*',
+			        	'client/modules/about/*.js',
+			        	'client/modules/home/*.js',
+			        	'client/modules/home/searcher/*.js',
+			        	'client/modules/home/moods/*.js',
+			        	'client/modules/home/list-films/*.js',
+			        	'client/modules/home/questions/*.js',
+			        	'client/modules/home/questions/handlers/*.js',
+			        	'client/modules/specifications/*.js',
 			        ],
-			    dest:'dist/scripts.min.js'
+			    dest:'client/dist/scripts.min.js'
 			}
 		},
 		uglify: {
 		    my_target: {
 			    files: {
-			        'dist/scripts.min.js': [
+			        'client/dist/scripts.min.js': [
 			        	'js/*',
 			        ]
 			    }
