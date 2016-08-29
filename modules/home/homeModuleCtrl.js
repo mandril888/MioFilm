@@ -1,1 +1,1 @@
-angular.module( 'homeModuleCtrl', [ 'homeService' ] )
+angular.module( 'homeModuleCtrl', [ ] )

@@ -7,6 +7,9 @@ angular.module( 'homeModuleCtrl' )
 		$scope.$on('infoFilmSearched', function(evt, message){
 			$scope.infoFilmToList = message;
 		})
+		$scope.$on('infoFilmSearchedByMood', function(evt, message){
+			$scope.infoFilmToList = message;
+		})
 		$('.go-top').on('click', function(event){
 			event.preventDefault();
 			$('html, body').animate({
