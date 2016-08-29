@@ -6,11 +6,11 @@ angular.module( 'homeModuleCtrl' )
 			$('.questions-to-filter').animate({
 				'height': '250px',
 				'padding': '50px 0 0 -800px'
-			}, 2000);
+			}, 1500);
 			$('#question1').css('display', 'block');
 			$('#question1').delay(1000).animate({
 				'padding-left': '950px'
-			}, 1500);
+			}, 1000);
 			$('#question2').css('display', 'none');
 			$('#question3').css('display', 'none');
 			$('#question4').css('display', 'none');

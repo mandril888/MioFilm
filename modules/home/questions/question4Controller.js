@@ -26,8 +26,8 @@ angular.module( 'homeModuleCtrl' )
 		$scope.searchFilmWithFilter = function() {
 			$('.list-films').css('display', 'flex')
 			$('.insert-text').html('<h1>You have searched: <span class="item-searched">' + moodSearchRecived + '</span></h1>')
-			$('.repeat-search').css('display', 'flex')
-			$('#question4').html("<a href='/#/' ng-click='searchFilmWithFilter()' class='luck-search'>Repeat the search</a>");
+			$('#question4 span').html('Repeat the search');
+
 
 			var moodNumber;
 
@@ -46,6 +46,7 @@ angular.module( 'homeModuleCtrl' )
 			}
 
 			var aFilmsFiltered = [];
+			console.log(moodNumber)
 
 			questionsService.getInfoFilmByMood( moodNumber )
 				.then( function( data ) {
