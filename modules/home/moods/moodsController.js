@@ -18,7 +18,6 @@ angular.module( 'homeModuleCtrl' )
 
 			var moodFeelingSend = mood;
 			$rootScope.$broadcast('moodFeelingSend', moodFeelingSend);
-			console.log('moodFeeling: '+moodFeelingSend)
 		}
 
 		$('a').on('click', function(event){
@@ -27,5 +26,4 @@ angular.module( 'homeModuleCtrl' )
 				scrollTop: $('.to-move-scroll').offset().top
 			}, 1500);
 		});
-
 	})

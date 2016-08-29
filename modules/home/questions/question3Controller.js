@@ -13,9 +13,7 @@ angular.module( 'homeModuleCtrl' )
 			}, 1500);
 
 			yearLimit = timeProduced;
-			console.log(yearLimit)
+
+			$rootScope.$broadcast('yearLimitSend', yearLimit);
 		}
-
-		$rootScope.$broadcast('moodSearchSend', yearLimit);
-
 	})

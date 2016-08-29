@@ -16,9 +16,7 @@ angular.module( 'homeModuleCtrl' )
 				minTime: minDuration,
 				maxTime: maxDuration
 			}
-			console.log(oTime)
+
+			$rootScope.$broadcast('oTimeSend', oTime);
 		}
-
-		$rootScope.$broadcast('moodSearchSend', oTime);
-
 	})

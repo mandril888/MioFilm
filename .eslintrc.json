@@ -1,4 +1,7 @@
 {
     "extends": "airbnb",
-    "installedESLint": true
+    "installedESLint": true,
+    "rules" :{
+    	"no-console" : "warn"
+    }
 }

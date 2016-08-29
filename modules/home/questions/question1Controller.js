@@ -15,7 +15,6 @@ angular.module( 'homeModuleCtrl' )
 
 		$scope.$on('moodFeelingSend', function(evt, message){
 			moodFeelingRecived = message;
-			console.log('recived: '+moodFeelingRecived)
 		})
 
 		$scope.filterSetMoodFilm = function ( info ) {
@@ -34,9 +33,8 @@ angular.module( 'homeModuleCtrl' )
 			} else {
 				moodSearch = oMoodsOpposite[moodFeelingRecived];
 			}
-			console.log(moodSearch)
-		}
 
-		$rootScope.$broadcast('moodSearchSend', moodSearch);
+			$rootScope.$broadcast('moodSearchSend', moodSearch);
+		}
 
 	})
