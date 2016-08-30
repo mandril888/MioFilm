@@ -10,7 +10,8 @@ angular.module( 'config', [ ] )
 					// controller: 'homeController'
 				})
 				.when('/specifications/:FILMID',{
-					templateUrl: 'client/modules/specifications/specifications.html'
+					templateUrl: 'client/modules/specifications/specifications.html',
+					controller: 'specificationsController'
 				})
 				// .when('/about',{
 				// 	templateUrl: 'modules/about/about.html',

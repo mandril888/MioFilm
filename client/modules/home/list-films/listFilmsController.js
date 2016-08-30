@@ -1,6 +1,6 @@
 angular.module( 'homeModuleCtrl' )
 	.controller('listFilmsController', function( $rootScope, $scope ) {
-		$scope.imageNotFoundCover = '../../img/image-not-found-cover.jpg';
+		$scope.imageNotFoundCover = 'client/img/image-not-found-cover.jpg';
 		$scope.$on('newSearchValue', function(evt, message){
 			$scope.itemSearched = message;
 		})
