@@ -20,7 +20,7 @@ angular.module( 'homeModuleCtrl' )
 			$rootScope.$broadcast('moodFeelingSend', moodFeelingSend);
 		}
 
-		$('a').on('click', function(event){
+		$('.btn').on('click', function(event){
 			event.preventDefault();
 			$('html, body').animate({
 				scrollTop: $('.to-move-scroll').offset().top

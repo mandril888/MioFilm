@@ -3,19 +3,21 @@ angular.module( 'config', [ ] )
 			$routeProvider
 				.when('/',{
 					templateUrl: 'client/modules/home/home.html',
-					// controller: 'homeController'
 				})
 				.when('/home',{
 					templateUrl: 'client/modules/home/home.html',
-					// controller: 'homeController'
 				})
 				.when('/specifications/:FILMID',{
 					templateUrl: 'client/modules/specifications/specifications.html',
 					controller: 'specificationsController'
 				})
-				// .when('/about',{
-				// 	templateUrl: 'modules/about/about.html',
-				// 	controller: 'aboutModuleCtrl'
+				.when('/login',{
+					templateUrl: 'client/modules/login/login.html',
+					controller: 'loginController'
+				})
+				// .when('/signin',{
+				// 	templateUrl: 'client/modules/signin/signin.html',
+				// 	controller: 'signinController'
 				// })
 				.otherwise({ redirectTo: '/' }); ;
 	})
