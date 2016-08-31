@@ -10,12 +10,14 @@ var config		= require('./app/config'); // get our config file
 var User		= require('./app/models/user'); // get our mongoose model
 var verifyToken	= require('./app/middlewares/verifyToken') // get the functoin to verify the token
 var authentication = require('./app/functions/authentication') // get the function to authenticate the users
-var showJsonUsers = require('.app/functions/showJsonUsers') // get the function to show users registered
+var showJsonUsers = require('./app/functions/showJsonUsers') // get the function to show users registered
 
 // configuration =========
 var port = process.env.PORT || 8085; // used to create, sign, and verify tokens
 mongoose.connect(config.database); // connect to database
 app.set('superSecret', config.secret); // secret variable
+
+app.use(express.static( __dirname + '/../client'));
 
 // use body parser so we can get info from POST and/or URL parameters
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -35,8 +37,8 @@ app.get('/setup', function(req, res) {
 
 	// create a sample user
 	var nick = new User({
-		name: 'no',
-		password: 'no',
+		name: 'yes',
+		password: 'yes',
 		admin: true,
 		date: new Date()
 	});
@@ -53,8 +55,6 @@ app.get('/setup', function(req, res) {
 // API ROUTES
 // get an instance of the router for api routes
 var apiRoutes = express.Router();
-// apply the routes to our application with the prefix /api
-app.use('/api', apiRoutes);
 
 // route to authenticate a user (POST http://localhost:8085/api/authenticate)
 apiRoutes.post('/authenticate', authentication);
@@ -70,6 +70,9 @@ apiRoutes.get('/', function(req, res) {
 // route to return all users (GET http://localhost:8085/api/users)
 apiRoutes.get('/users', showJsonUsers);
 // FINISH routes ================
+
+// apply the routes to our application with the prefix /api
+app.use('/api', apiRoutes);
 
 // start the server ======
 app.listen(port);

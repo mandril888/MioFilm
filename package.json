@@ -3,11 +3,16 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
+    "dev": "nodemon server",
+    "start": "node server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mandril888/MioFilm.git"
+  },
+  "engines" : {
+    "node" : "6.2.1"
   },
   "author": "",
   "license": "ISC",
