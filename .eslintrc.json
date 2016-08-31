@@ -1,7 +1,7 @@
-{
-    "extends": "airbnb",
-    "installedESLint": true,
-    "rules" :{
-    	"no-console" : "warn"
-    }
-}
+// {
+//     "extends": "airbnb",
+//     "installedESLint": true,
+//     "rules" :{
+//     	"no-console" : "warn"
+//     }
+// }

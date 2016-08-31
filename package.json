@@ -1,20 +1,20 @@
 {
   "name": "MioFilm",
   "version": "1.0.0",
-  "main": "Gruntfile.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/carl32crc/dumbeer.git"
+    "url": "git+https://github.com/mandril888/MioFilm.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/carl32crc/dumbeer/issues"
+    "url": "https://github.com/mandril888/MioFilm/issues"
   },
-  "homepage": "https://github.com/carl32crc/dumbeer#readme",
+  "homepage": "https://github.com/mandril888/MioFilm#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
