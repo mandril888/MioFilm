@@ -4,9 +4,8 @@ var app			= express();
 var bodyParser	= require('body-parser');
 var morgan		= require('morgan');
 var mongoose	= require('mongoose');
-var jwt			= require('jsonwebtoken'); // used to create, sign, and verify tokens
 
-var config		= require('./app/config'); // get our config file
+var config		= require('./app/config'); // get our config file MODELO
 var User		= require('./app/models/user'); // get our mongoose model
 var verifyToken	= require('./app/middlewares/verifyToken') // get the functoin to verify the token
 var authentication = require('./app/functions/authentication') // get the function to authenticate the users
@@ -57,7 +56,7 @@ app.get('/setup', function(req, res) {
 var apiRoutes = express.Router();
 
 // route to authenticate a user (POST http://localhost:8085/api/authenticate)
-apiRoutes.post('/authenticate', authentication);
+apiRoutes.post('/authenticate', authentication.bind(null, User));
 
 // route middleware to verify a token
 apiRoutes.use(verifyToken);
