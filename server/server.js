@@ -4,10 +4,13 @@ var app			= express();
 var bodyParser	= require('body-parser');
 var morgan		= require('morgan');
 var mongoose	= require('mongoose');
+var jwt			= require('jsonwebtoken'); // used to create, sign, and verify tokens
 
-var jwt		= require('jsonwebtoken'); // used to create, sign, and verify tokens
-var config	= require('./config'); // get our config file
-var User	= require('./app/models/user'); // get our mongoose model
+var config		= require('./app/config'); // get our config file
+var User		= require('./app/models/user'); // get our mongoose model
+var verifyToken	= require('./app/middlewares/verifyToken') // get the functoin to verify the token
+var authentication = require('./app/functions/authentication') // get the function to authenticate the users
+var showJsonUsers = require('.app/functions/showJsonUsers') // get the function to show users registered
 
 // configuration =========
 var port = process.env.PORT || 8085; // used to create, sign, and verify tokens
@@ -50,12 +53,14 @@ app.get('/setup', function(req, res) {
 // API ROUTES
 // get an instance of the router for api routes
 var apiRoutes = express.Router();
-
 // apply the routes to our application with the prefix /api
 app.use('/api', apiRoutes);
 
-// TODO: route to authenticate a user (POST http://localhost:8085/api/authenticate)
-// TODO: route middleware to verify a token
+// route to authenticate a user (POST http://localhost:8085/api/authenticate)
+apiRoutes.post('/authenticate', authentication);
+
+// route middleware to verify a token
+apiRoutes.use(verifyToken);
 
 // route to show a random message (GET http://localhost:8085/api/)
 apiRoutes.get('/', function(req, res) {
@@ -63,51 +68,7 @@ apiRoutes.get('/', function(req, res) {
 });
 
 // route to return all users (GET http://localhost:8085/api/users)
-apiRoutes.get('/users', function(req, res) {
-	User.find({}, function(err, users) {
-		res.json(users);
-	});
-});
-
-
-
-//***************************************************************
-
-// route to authenticate a user (POST http://localhost:8085/api/authenticate)
-apiRoutes.post('/authenticate', function(req, res) {
-
-	// find the user
-	User.findOne({
-		name: req.body.name
-	}, function(err, user) {
-
-		if (err) throw err;
-
-		if (!user) {
-			res.json({ success: false, message: 'Authentication failed. User not found.'});
-		} else if (user) {
-
-			// check if password matches
-			if (user.password != req.body.password) {
-			res.json({ success: false, message: 'Authentication failed. Wrong password.' });
-			} else {
-
-			// if user is found and password is right
-			// create a token
-			var token = jwt.sign(user, app.get('superSecret'), {
-				expiresIn: 300 // expires in 5 hours
-			});
-
-			// return the information including token as JSON
-			res.json({
-				success: true,
-				message: 'Enjoy your token!',
-				token: token
-			});
-			}
-		}
-	});
-});
+apiRoutes.get('/users', showJsonUsers);
 // FINISH routes ================
 
 // start the server ======
