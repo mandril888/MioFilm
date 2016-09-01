@@ -1,1 +1,1 @@
-angular.module( 'controllers', [ 'homeModuleCtrl', 'specificationsModuleCtrl', 'loginModuleCtrl', ] )
+angular.module( 'controllers', [ 'homeModuleCtrl', 'specificationsModuleCtrl', 'loginModuleCtrl', 'signinModuleCtrl', 'profileModuleCtrl' ] )

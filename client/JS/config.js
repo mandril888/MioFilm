@@ -15,9 +15,13 @@ angular.module( 'config', [ ] )
 					templateUrl: 'modules/login/login.html',
 					controller: 'loginController'
 				})
-				// .when('/signin',{
-				// 	templateUrl: 'client/modules/signin/signin.html',
-				// 	controller: 'signinController'
-				// })
+				.when('/signin',{
+					templateUrl: 'modules/signin/signin.html',
+					controller: 'signinController'
+				})
+				.when('/profile',{
+					templateUrl: 'modules/profile/profile.html',
+					controller: 'signinController'
+				})
 				.otherwise({ redirectTo: '/' }); ;
 	})

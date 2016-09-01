@@ -6,16 +6,17 @@ angular.module( 'loginModuleCtrl', [ ] )
 				userName: $scope.userName,
 				userPassword: $scope.userPassword
 			}
-			console.log('B: '+user.userName+' '+user.userPassword)
+			console.log('User: '+user.userName+' '+user.userPassword)
 			loginService.login( user )
 				.then( function( data ) {
 					console.log(data)
-					if (data.length > 0) {
+					if (data.data.success === true) {
 						console.log( 'LOGIN CORRECT' );
-						$location.path( 'myprofile' );
-					} else {
+						$location.path( 'profile' );
+					} else if (data.data.success === false){
 						console.log( 'LOGIN INCORRECT' );
 						$location.path( 'login' );
+						$('.failed-login').css('display', 'block');
 					}
 				})
 		}
