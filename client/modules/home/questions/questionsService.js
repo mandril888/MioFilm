@@ -1,5 +1,5 @@
 angular.module( 'homeService' )
-	.factory('questionsService', function( $http, $q ) {
+	.factory('questionsService', function( $http ) {
 
 		var urlToSearchFilmByMood = 'https://api.themoviedb.org/3/discover/movie?api_key=71bd8c83c5cc06c197435d2165ac52e4&with_genres=<MOOD_NUM>&page=<PAGE>';
 

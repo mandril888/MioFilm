@@ -27,6 +27,9 @@ angular.module( 'homeModuleCtrl' )
 			$('.list-films').css('display', 'flex')
 			$('.insert-text').html('<h1>You have searched: <span class="item-searched">' + moodSearchRecived + '</span></h1>')
 			$('#question4 span').html('Repeat the search');
+			$('html, body').animate({
+				scrollTop: $('.to-move-scroll').offset().top
+			}, 1000);
 
 
 			var moodNumber;

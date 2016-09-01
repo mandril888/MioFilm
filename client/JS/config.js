@@ -21,7 +21,7 @@ angular.module( 'config', [ ] )
 				})
 				.when('/profile',{
 					templateUrl: 'modules/profile/profile.html',
-					controller: 'signinController'
+					controller: 'profileController'
 				})
 				.otherwise({ redirectTo: '/' }); ;
 	})
