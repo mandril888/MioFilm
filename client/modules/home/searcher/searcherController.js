@@ -1,6 +1,5 @@
 angular.module( 'homeModuleCtrl' )
 	.controller( 'searcherController' , function ( $rootScope, $scope, $http, searcherService ) {
-		console.log('aaaa')
 
 		$scope.submit = function() {
 			console.log('bbbbbb')
@@ -11,13 +10,8 @@ angular.module( 'homeModuleCtrl' )
 			}, 1000);
 			$('.insert-text').html('<h1>You have searched: <span class="item-searched">' + $scope.filmToSearch + '</span></h1>')
 
-			// $rootScope.$broadcast('newSearchValue', $scope.filmToSearch);
-			var filmSelected = $scope.filmToSearch;
-			console.log(filmSelected)
-
-			searcherService.getInfoFilm( filmSelected )
+			searcherService.getInfoFilm( $scope.filmToSearch )
 				.then( function ( dataFilmSearched ){
-					console.log('service searcher')
 					$rootScope.$broadcast('infoFilmSearched', dataFilmSearched.data.results);
 				})
 		}
