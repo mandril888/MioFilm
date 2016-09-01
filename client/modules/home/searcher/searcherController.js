@@ -2,7 +2,6 @@ angular.module( 'homeModuleCtrl' )
 	.controller( 'searcherController' , function ( $rootScope, $scope, $http, searcherService ) {
 
 		$scope.submit = function() {
-			console.log('bbbbbb')
 			$('.questions-to-filter').css('display', 'none');
 			$('.list-films').css('display', 'flex')
 			$('html, body').animate({

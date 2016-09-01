@@ -4,7 +4,6 @@ angular.module( 'homeService' )
 		var urlToSearchFilm = 'http://api.themoviedb.org/3/search/movie?api_key=71bd8c83c5cc06c197435d2165ac52e4&query=<SEARCH>';
 
 		function getInfoFilm ( filmToSearch ) {
-			console.log(filmToSearch)
 			var urlToSearchFilmChanged = urlToSearchFilm.replace('<SEARCH>', filmToSearch)
 			return $http.get( urlToSearchFilmChanged )
 		}
