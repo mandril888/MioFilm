@@ -9,8 +9,14 @@ angular.module( 'specificationsService', [ ] )
 			return $http.get( urlToSearchFilmChanged )
 		}
 
+		function postInfoSeenFilms( infoFilmSeen ) {
+			console.log(infoFilmSeen)
+			return $http.post( '/film-seen', infoFilmSeen )
+		}
+
 		return {
-			getSpecificationsFilm : getSpecificationsFilm
+			getSpecificationsFilm : getSpecificationsFilm,
+			postInfoSeenFilms : postInfoSeenFilms
 		}
 
 	})

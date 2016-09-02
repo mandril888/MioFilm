@@ -49,7 +49,8 @@ module.exports = function(grunt) {
 			        	'client/modules/home/moods/*.js',
 			        	'client/modules/home/list-films/*.js',
 			        	'client/modules/home/questions/*.js',
-			        	'client/modules/specifications/*.js',],
+			        	'client/modules/specifications/*.js',
+			        	'client/modules/specifications/controllers/*.js',],
 			    tasks: ['concat']
 			}
 		},
@@ -66,6 +67,7 @@ module.exports = function(grunt) {
 			        	'client/modules/home/list-films/*.js',
 			        	'client/modules/home/questions/*.js',
 			        	'client/modules/specifications/*.js',
+			        	'client/modules/specifications/controllers/*.js',
 			        ],
 			    dest:'client/dist/scripts.min.js'
 			}

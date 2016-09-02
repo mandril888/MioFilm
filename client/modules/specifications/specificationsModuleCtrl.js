@@ -10,15 +10,4 @@ angular.module( 'specificationsModuleCtrl', [ ] )
 			.then( function ( dataFilmSearched ){
 				$scope.specificationsFilmSearched = dataFilmSearched.data;
 			})
-
-		$scope.movieSeen = function (idFilm) {
-			console.log(idFilm)
-			if ($localStorage.token !== undefined) {
-				$('.img-imagotipo').attr("src","../../img/miofilm-imagotipo.png");
-			} else {
-				$('.not-logged').css('display', 'block')
-			}
-		}
-
-
 	})

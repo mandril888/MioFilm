@@ -8,6 +8,7 @@ var mongoose	= require('mongoose');
 var config		= require('./app/config'); // get our config file
 var apiRoutes = require('./app/routes/apiRoutes');
 var createUser = require('./app/functions/createUser') // get the function to show users registered
+var infoFilmSeen = require('./app/functions/infoFilmSeen')
 var User		= require('./app/models/user'); // get our mongoose model
 
 // configuration =========
@@ -27,6 +28,8 @@ app.use(morgan('dev'));
 
 // routes ================
 app.post('/new-user', createUser);
+app.post('/film-seen', infoFilmSeen);
+
 
 // API ROUTES
 // get an instance of the router for api routes
