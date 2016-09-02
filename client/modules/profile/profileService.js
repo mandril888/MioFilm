@@ -9,8 +9,14 @@ angular.module( 'profileService', [ ] )
 			return $http.get( urlToSearchFilmChanged )
 		}
 
+		function getInfoUser( nameUser ) {
+			console.log('paso2: '+nameUser)
+			return $http.post( '/info-user', nameUser )
+		}
+
 		return {
-			getSpecificationsFilm : getSpecificationsFilm
+			getSpecificationsFilm : getSpecificationsFilm,
+			getInfoUser : getInfoUser
 		}
 
 	})

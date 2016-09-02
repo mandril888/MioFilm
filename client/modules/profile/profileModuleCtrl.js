@@ -10,15 +10,18 @@ angular.module( 'profileModuleCtrl', [ ] )
 			return JSON.parse(window.atob(base64));
 		};
 
-		var idFilmsFromToken = parseJwt($localStorage.token);
-		console.log(idFilmsFromToken._doc.filmsWatched)
-
-		idFilmsFromToken._doc.filmsWatched.forEach(function(item){
-			profileService.getSpecificationsFilm( item )
-				.then( function ( dataFilmSearched ){
-					console.log(dataFilmSearched)
-					$scope.infoFilmSeen.push(dataFilmSearched.data);
+		var infoToken = parseJwt($localStorage.token);
+		console.log('paso1: '+infoToken._doc.name)
+		profileService.getInfoUser(infoToken._doc.name)
+			.then(function ( infoUser ){
+				console.log('user info:'+infoUser)
+				infoUser.forEach(function(item){
+					profileService.getSpecificationsFilm( item )
+						.then( function ( dataFilmSearched ){
+							console.log(dataFilmSearched)
+							$scope.infoFilmSeen.push(dataFilmSearched.data);
+						})
 				})
-		})
+			})
 
 	})
