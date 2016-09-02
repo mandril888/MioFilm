@@ -1,3 +1,25 @@
 <div class="container">
-	<p>PROFILE</p>
+	<div class="header">
+		<div class="profile-img"></div>
+		<div class="title-page">
+			<p class="helvetica-font"><strong>PROFILE</strong></p>
+		</div>
+		<div class="nav-pages">
+			<a href="#">Movies seen</a>
+			<a href="#">Movies to see</a>
+		</div>
+	</div>
+
+	<div class="list-watched-films">
+		<div class="films-watched" ng-repeat="movies in infoFilmSeen">
+			<a href="/#/specifications/{{movies.id}}" target="_blank">
+				<img ng-src="http://image.tmdb.org/t/p/w500/{{ movies.poster_path}}" altSrc="{{imageNotFoundCover}}" onerror="this.src = $(this).attr('altSrc')">
+			</a>
+			<a href="/#/specifications/{{movies.id}}" target="_blank">
+				<p><strong>{{ movies.original_title }}</strong></p>
+			</a>
+			<p><em>{{ movies.release_date | date : 'yyyy' }}</em> &nbsp; &nbsp; <i class="glyphicon glyphicon-star-empty star"></i> {{ movies.vote_average }}</p>
+		</div>
+	</div>
+
 </div>

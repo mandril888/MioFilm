@@ -7,7 +7,8 @@ usersSchema = mongoose.model('users', new Schema({
 	name: String,
 	password: String,
 	admin: Boolean,
-	filmsWatched: Object
+	filmsWatched: Object,
+	filmsToSee: Object
 }));
 
 module.exports = usersSchema;

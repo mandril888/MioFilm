@@ -1,0 +1,35 @@
+.header {
+
+}
+
+.list-watched-films {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	text-align: center;
+	// margin: 60px 0 50px;
+	// padding: 40px 25px;
+	// border: 1px solid $turquoise-blue;
+	// box-shadow: 0 0 10px black;
+
+	.films-watched {
+		margin: 20px 30px;
+		width: 220px;
+
+		p {
+			margin-top:5px;
+			margin-bottom: 0;
+		}
+
+		img {
+			width: 200px;
+			height: 300px;
+			margin-bottom: 5px;
+			border-radius: 5px;
+		}
+
+		@media screen and (max-width: 660px){
+			margin: 20px 10px;
+		}
+	}
+}
