@@ -3,7 +3,7 @@ angular.module( 'specificationsModuleCtrl' )
 
 		$scope.movieSeen = function (idFilm) {
 			console.log(idFilm)
-			if ($localStorage.token !== undefined) {
+			if ($localStorage.token) {
 				$('.img-imagotipo').attr("src","../../img/miofilm-imagotipo.png");
 
 				var infoUser = parseJwt($localStorage.token);

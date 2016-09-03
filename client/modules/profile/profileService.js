@@ -11,8 +11,9 @@ angular.module( 'profileService', [ ] )
 
 		function getInfoUser( nameUser ) {
 			console.log('paso2: '+nameUser)
-			return $http.post( '/info-user', nameUser )
+			return $http.post( '/api/info-user', nameUser )
 		}
+
 
 		return {
 			getSpecificationsFilm : getSpecificationsFilm,

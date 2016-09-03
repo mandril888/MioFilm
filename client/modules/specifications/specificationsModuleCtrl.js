@@ -1,5 +1,5 @@
 angular.module( 'specificationsModuleCtrl', [ ] )
-	.controller( 'specificationsController' , function ( $localStorage, $scope, $http, $routeParams, specificationsService ) {
+	.controller( 'specificationsController' , function ( $scope, $http, $routeParams, specificationsService ) {
 
 		$scope.imageNotFoundCover = '../../img/image-not-found-cover.jpg';
 		$scope.imageNotFoundHeaderCover = '../../img/image-not-found-header-cover.jpg';

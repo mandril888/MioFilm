@@ -4,7 +4,7 @@ angular.module( 'loginModuleCtrl', [ ] )
 		$scope.storage = $localStorage;
 
 		console.log($localStorage.token)
-		if ($localStorage.token !== undefined) {
+		if ($localStorage.token) {
 			$location.path( 'profile' )
 		}
 

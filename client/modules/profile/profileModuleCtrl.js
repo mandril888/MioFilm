@@ -1,5 +1,10 @@
 angular.module( 'profileModuleCtrl', [ ] )
 	.controller( 'profileController' , function ( $localStorage, $scope, $location, profileService ) {
+
+		if (!$localStorage.token) {
+			$location.path( 'login' )
+		}
+
 		$scope.imageNotFoundCover = '../../img/image-not-found-cover.jpg';
 		console.log($localStorage.token)
 		$scope.infoFilmSeen = [];
@@ -10,18 +15,30 @@ angular.module( 'profileModuleCtrl', [ ] )
 			return JSON.parse(window.atob(base64));
 		};
 
+		console.log('in the profileController')
+
 		var infoToken = parseJwt($localStorage.token);
 		console.log('paso1: '+infoToken._doc.name)
-		profileService.getInfoUser(infoToken._doc.name)
-			.then(function ( infoUser ){
-				console.log('user info:'+infoUser)
-				infoUser.forEach(function(item){
-					profileService.getSpecificationsFilm( item )
-						.then( function ( dataFilmSearched ){
-							console.log(dataFilmSearched)
-							$scope.infoFilmSeen.push(dataFilmSearched.data);
-						})
-				})
+		var nameUser = {nameUser:infoToken._doc.name}
+		profileService.getInfoUser(nameUser)
+			.then(function ( userFilmsWatched ){
+				console.log('user films seen:'+userFilmsWatched)
+				console.log(userFilmsWatched.data)
+				if(userFilmsWatched.data.length!==0){
+					userFilmsWatched.data.forEach(function(item){
+						profileService.getSpecificationsFilm( item )
+							.then( function ( dataFilmSearched ){
+								console.log(dataFilmSearched)
+								$scope.infoFilmSeen.push(dataFilmSearched.data);
+							})
+					})
+				}
 			})
+
+		$scope.logout = function(){
+			console.log('logout')
+			window.location.reload(true);
+			localStorage.clear();
+		}
 
 	})

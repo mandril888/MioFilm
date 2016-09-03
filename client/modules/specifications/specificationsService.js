@@ -11,7 +11,7 @@ angular.module( 'specificationsService', [ ] )
 
 		function postInfoSeenFilms( infoFilmSeen ) {
 			console.log(infoFilmSeen)
-			return $http.post( '/film-seen', infoFilmSeen )
+			return $http.post( '/api/film-seen', infoFilmSeen )
 		}
 
 		return {

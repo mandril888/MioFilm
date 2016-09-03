@@ -1,21 +1,19 @@
-// get the packages we need ============
+// get the packages we need ================================
 var express			= require('express');
 var app				= express();
 var bodyParser		= require('body-parser');
 var morgan			= require('morgan');
 var mongoose		= require('mongoose');
 
-var config			= require('./app/config'); // get our config file
+// export files required ================================
+var config			= require('./app/config');
 var apiRoutes		= require('./app/routes/apiRoutes');
-var createUser		= require('./app/functions/createUser') // get the function to show users registered
-var infoFilmSeen	= require('./app/functions/infoFilmSeen')
-var infoUser		= require('./app/functions/infoUser')
-var User			= require('./app/models/user'); // get our mongoose model
+var createUser		= require('./app/functions/createUser')
 
-// configuration =========
-var port = process.env.PORT || 8085; // used to create, sign, and verify tokens
-mongoose.connect(config.database); // connect to database
-app.set('superSecret', config.secret); // secret variable
+// configuration ================================
+var port = process.env.PORT || 8085;
+
+mongoose.connect(config.database);
 
 app.use(express.static( __dirname + '/../client'));
 
@@ -25,19 +23,14 @@ app.use(bodyParser.json());
 
 // use morgan to log requests to the console
 app.use(morgan('dev'));
-// FINISH configuration =========
 
-// routes ================
+// routes ================================
 app.post('/new-user', createUser);
-app.post('/film-seen', infoFilmSeen);
-app.post('/info-user', infoUser);
 
-
-// API ROUTES
-// get an instance of the router for api routes
+// api routes
 // apply the routes to our application with the prefix /api
 app.use('/api', apiRoutes);
 
-// start the server ======
+// start the server ================================
 app.listen(port);
 console.log('Magic happens at http://localhost:' + port);
