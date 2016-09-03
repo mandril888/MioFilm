@@ -1,16 +1,15 @@
 angular.module( 'homeModuleCtrl' )
 	.controller( 'question4Controller' , function ( $rootScope, $scope, $http, questionsService, $q ) {
 
+		//Predefined values to the Filter
+		var numberFilmsToSearch = 6;
+		var numVotesMinimum = 10;
+		var rateToFilter = 5;
 		//Input values of the Filter
 		var moodSearchRecived = "";
 		var minTimeRecived = "";
 		var maxTimeRecived = "";
 		var yearLimitRecived = "";
-
-		//Predefined values to the Filter
-		var numberFilmsToSearch = 6;
-		var numVotesMinimum = 10;
-		var rateToFilter = 5;
 
 		$scope.$on('moodSearchSend', function(evt, message){
 			moodSearchRecived = message;
@@ -31,25 +30,16 @@ angular.module( 'homeModuleCtrl' )
 				scrollTop: $('.to-move-scroll').offset().top
 			}, 1000);
 
-
 			var moodNumber;
-
-			if ( moodSearchRecived === 'Sad' ) {
-				moodNumber = '80|18|10752';
-			} else if ( moodSearchRecived === 'Joyful') {
-				moodNumber = '12|16|35|10751|14|10402|10749';
-			} else if ( moodSearchRecived === 'Mad') {
-				moodNumber = '28|80|53|10752';
-			} else if ( moodSearchRecived === 'Powerful') {
-				moodNumber = '28|12|14|9648|878|53';
-			} else if ( moodSearchRecived === 'Scared') {
-				moodNumber = '80|27|9648';
-			} else if ( moodSearchRecived === 'Peaceful') {
-				moodNumber = '99|10751|14|36|10402|10749';
+			if ( moodSearchRecived === 'Sad' ) { moodNumber = '80|18|10752';
+			} else if ( moodSearchRecived === 'Joyful') { moodNumber = '12|16|35|10751|14|10402|10749';
+			} else if ( moodSearchRecived === 'Mad') { moodNumber = '28|80|53|10752';
+			} else if ( moodSearchRecived === 'Powerful') { moodNumber = '28|12|14|9648|878|53';
+			} else if ( moodSearchRecived === 'Scared') { moodNumber = '80|27|9648';
+			} else if ( moodSearchRecived === 'Peaceful') { moodNumber = '99|10751|14|36|10402|10749';
 			}
 
 			var aFilmsFiltered = [];
-			console.log(moodNumber)
 
 			questionsService.getInfoFilmByMood( moodNumber )
 				.then( function( data ) {
@@ -71,7 +61,6 @@ angular.module( 'homeModuleCtrl' )
 					}
 				}
 			})
-
 			$q.all( promisesDetailsFilms )
 				.then( function ( aDataFilmSearched ){
 					aDataFilmSearched.forEach( function (item, i) {
@@ -83,7 +72,6 @@ angular.module( 'homeModuleCtrl' )
 						}
 					})
 				})
-
 			if ( aFilmsFiltered.length < numberFilmsToSearch ) {
 				questionsService.getInfoFilmByMood( moodNumber )
 					.then( function( data ) {
