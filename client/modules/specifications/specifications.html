@@ -24,28 +24,33 @@
 		<div class="not-logged">
 			<p>You are not logged</p>
 		</div>
+		<div class="not-info-complete">
+			<p>You miss some info</p>
+		</div>
 		<div class="film-seen">
-			<div class="seen-info-A" ng-controller="seeFilmController">
-				<a ng-click="movieSeen(specificationsFilmSearched.id)" href=""><img class="img-imagotipo" src="../../img/miofilm-imagotipo-grey.png" alt=""></a>
-				<form>
+			<div class="seen-info-A">
+				<div ng-controller="seeFilmController">
+					<a ng-click="movieSeen(specificationsFilmSearched.id)" href=""><img class="img-imagotipo" src="../../img/miofilm-imagotipo-grey.png" alt=""></a>
+				</div>
+				<form ng-controller="rateFilmController">
 				  <fieldset>
 				    <span class="star-cb-group"">
-				      <input class="star" type="radio" id="rating-5" name="{{$parent.resultDetailsBeer.id}}Rating" ng-model="$parent.resultDetailsBeer.rating" ng-change="rate($parent.resultDetailsBeer)" value="5" ng-checked="selectedRating === '5'" /><label for="rating-5">5</label>
-				      <input class="star" type="radio" id="rating-4" name="{{$parent.resultDetailsBeer.id}}Rating" ng-model="$parent.resultDetailsBeer.rating" ng-change="rate($parent.resultDetailsBeer)" value="4" ng-checked="selectedRating === '4'" /><label for="rating-4">4</label>
-				      <input class="star" type="radio" id="rating-3" name="{{$parent.resultDetailsBeer.id}}Rating" ng-model="$parent.resultDetailsBeer.rating" ng-change="rate($parent.resultDetailsBeer)" value="3" ng-checked="selectedRating === '3'" /><label for="rating-3">3</label>
-				      <input class="star" type="radio" id="rating-2" name="{{$parent.resultDetailsBeer.id}}Rating" ng-model="$parent.resultDetailsBeer.rating" ng-change="rate($parent.resultDetailsBeer)" value="2" ng-checked="selectedRating === '2'" /><label for="rating-2">2</label>
-				      <input class="star" type="radio" id="rating-1" name="{{$parent.resultDetailsBeer.id}}Rating" ng-model="$parent.resultDetailsBeer.rating" ng-change="rate($parent.resultDetailsBeer)" value="1" ng-checked="selectedRating === '1'" /><label for="rating-1">1</label>
+				      <input class="star" type="radio" id="rating-5" name="{{$parent.resultDetailsBeer.id}}Rating" ng-model="$parent.resultDetailsBeer.rating" ng-change="rate(5)" value="5" ng-checked="selectedRating === '5'" /><label for="rating-5">5</label>
+				      <input class="star" type="radio" id="rating-4" name="{{$parent.resultDetailsBeer.id}}Rating" ng-model="$parent.resultDetailsBeer.rating" ng-change="rate(4)" value="4" ng-checked="selectedRating === '4'" /><label for="rating-4">4</label>
+				      <input class="star" type="radio" id="rating-3" name="{{$parent.resultDetailsBeer.id}}Rating" ng-model="$parent.resultDetailsBeer.rating" ng-change="rate(3)" value="3" ng-checked="selectedRating === '3'" /><label for="rating-3">3</label>
+				      <input class="star" type="radio" id="rating-2" name="{{$parent.resultDetailsBeer.id}}Rating" ng-model="$parent.resultDetailsBeer.rating" ng-change="rate(2)" value="2" ng-checked="selectedRating === '2'" /><label for="rating-2">2</label>
+				      <input class="star" type="radio" id="rating-1" name="{{$parent.resultDetailsBeer.id}}Rating" ng-model="$parent.resultDetailsBeer.rating" ng-change="rate(1)" value="1" ng-checked="selectedRating === '1'" /><label for="rating-1">1</label>
 				    </span>
 				  </fieldset>
 				</form>
 			</div>
-			<div class="icons-felt">
+			<div class="icons-felt" ng-controller="moodFilmController">
 				<h3 class="androgyne-font">How did you feel seeing the film?</h3>
 				<ul>
 					<li>
 						<div class="individual-icon">
 							<a href="" ng-click="moodFelt('Mad')">
-								<img class="mood-icon go-dawn" src="img/Mad.png" alt="Mad icon" href="" title="Hurt, hostile, angry, rage, hateful or critical">
+								<img class="mood-icon go-dawn" src="img/Mad.png" alt="Mad icon" title="Hurt, hostile, angry, rage, hateful or critical">
 							</a>
 							<!-- <a class="btn btn-mad go-dawn" href="" role="button" title="Hurt, hostile, angry, rage, hateful or critical" ng-click="moodFelt('Mad')">Mad</a> -->
 						</div>
@@ -53,7 +58,7 @@
 					<li>
 						<div class="individual-icon">
 							<a href="" ng-click="moodFelt('Scared')">
-								<img class="mood-icon go-dawn" src="img/Scared.png" alt="Scared icon" href="" title="Rejected, confused, helpless, submissive, insecure or anxious">
+								<img class="mood-icon go-dawn" src="img/Scared.png" alt="Scared icon" title="Rejected, confused, helpless, submissive, insecure or anxious">
 							</a>
 							<!-- <a class="btn btn-scared go-dawn" href="" role="button" title="Rejected, confused, helpless, submissive, insecure or anxious" ng-click="moodFelt('Scared')">Scared</a> -->
 						</div>
@@ -61,7 +66,7 @@
 					<li>
 						<div class="individual-icon">
 							<a href="" ng-click="moodFelt('Joyful')">
-								<img class="mood-icon go-dawn" src="img/Joyful.png" alt="Joyful icon" href="" title="Excited, sexy, energetic, playful, creative or aware">
+								<img class="mood-icon go-dawn" src="img/Joyful.png" alt="Joyful icon" title="Excited, sexy, energetic, playful, creative or aware">
 							</a>
 							<!-- <a class="btn btn-joyful go-dawn" href="" role="button" title="Excited, sexy, energetic, playful, creative or aware" ng-click="moodFelt('Joyful')">Joyful</a> -->
 						</div>
@@ -69,7 +74,7 @@
 					<li>
 						<div class="individual-icon">
 							<a href="" ng-click="moodFelt('Powerful')">
-								<img class="mood-icon go-dawn" src="img/Powerful.png" alt="Powerful icon" href="" title="Faithful, important, hopeful, appreciated, respected or proud">
+								<img class="mood-icon go-dawn" src="img/Powerful.png" alt="Powerful icon" title="Faithful, important, hopeful, appreciated, respected or proud">
 							</a>
 							<!-- <a class="btn btn-powerful go-dawn" href="" role="button" title="Faithful, important, hopeful, appreciated, respected or proud" ng-click="moodFelt('Powerful')">Powerful</a> -->
 						</div>
@@ -77,7 +82,7 @@
 					<li>
 						<div class="individual-icon">
 							<a href="" ng-click="moodFelt('Peaceful')">
-								<img class="mood-icon go-dawn" src="img/Peaceful.png" alt="Peaceful icon" href="" title="Content, thoughtful, intimate, loving, trusting or nurturing">
+								<img class="mood-icon go-dawn" src="img/Peaceful.png" alt="Peaceful icon" title="Content, thoughtful, intimate, loving, trusting or nurturing">
 							</a>
 							<!-- <a class="btn btn-paceful go-dawn" href="" role="button" title="Content, thoughtful, intimate, loving, trusting or nurturing" ng-click="moodFelt('Peaceful')">Peaceful</a> -->
 						</div>
@@ -85,12 +90,15 @@
 					<li>
 						<div class="individual-icon">
 							<a href="" ng-click="moodFelt('Sad')">
-								<img class="mood-icon go-dawn" src="img/Sad.png" alt="Sad icon" href="" title="Guilty, ashamed, depressed, lonely, bored or sleepy">
+								<img class="mood-icon go-dawn" src="img/Sad.png" alt="Sad icon" title="Guilty, ashamed, depressed, lonely, bored or sleepy">
 							</a>
 							<!-- <a class="btn btn-sad go-dawn" href="" role="button" title="Guilty, ashamed, depressed, lonely, bored or sleepy" ng-click="moodFelt('Sad')">Sad</a> -->
 						</div>
 					</li>
 				</ul>
+			</div>
+			<div ng-controller="sendInfoSeenFilmController">
+				<a ng-click="sendInfoSeenFilm()" href="/#/profile">Save info of the seen film</a>
 			</div>
 		</div>
 	</div>

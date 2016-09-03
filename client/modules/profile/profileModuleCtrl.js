@@ -26,10 +26,17 @@ angular.module( 'profileModuleCtrl', [ ] )
 				console.log(userFilmsWatched.data)
 				if(userFilmsWatched.data.length!==0){
 					userFilmsWatched.data.forEach(function(item){
-						profileService.getSpecificationsFilm( item )
+						profileService.getSpecificationsFilm( item.idFilm )
 							.then( function ( dataFilmSearched ){
 								console.log(dataFilmSearched)
-								$scope.infoFilmSeen.push(dataFilmSearched.data);
+								var userInfoFilm = {
+									id: dataFilmSearched.data.id,
+									poster_path: dataFilmSearched.data.poster_path,
+									original_title: dataFilmSearched.data.original_title,
+									mood: item.mood,
+									rate: item.rate
+								}
+								$scope.infoFilmSeen.push(userInfoFilm);
 							})
 					})
 				}
@@ -40,5 +47,4 @@ angular.module( 'profileModuleCtrl', [ ] )
 			window.location.reload(true);
 			localStorage.clear();
 		}
-
 	})

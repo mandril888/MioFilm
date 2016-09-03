@@ -7,12 +7,17 @@ function infoFilmSeen (req, res) {
 	}, function(err, user) {
 		console.log(user)
 		if(user) {
-			console.log('idFilm: '+req.body.idFilm)
+			console.log('idFilm: '+req.body)
 			console.log('filmsWatched: '+user.filmsWatched)
 			var filmExsist = user.filmsWatched.indexOf(req.body.idFilm);
 			console.log('**********************************'+filmExsist)
 			if(filmExsist===-1){
-				user.filmsWatched.push(req.body.idFilm)
+				var infoFilmUser = {
+					idFilm: req.body.idFilm,
+					rate: req.body.rate,
+					mood: req.body.mood
+				}
+				user.filmsWatched.push(infoFilmUser)
 				console.log('user: '+user)
 				var query = {name: req.body.nameUser};
 				var update = { $set: { filmsWatched: user.filmsWatched }}
