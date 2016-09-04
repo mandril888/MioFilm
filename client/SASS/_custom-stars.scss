@@ -10,12 +10,13 @@ $yellow: #ffc602;
   text-align: right;
   display: flex;
   justify-content:center;
+  margin-top: 8px;
 
   
   /* remove inline-block whitespace */
   font-size: 0;
   * {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 
   /* flip the order so we can use the + and ~ combinators */
@@ -27,7 +28,7 @@ $yellow: #ffc602;
       /* only enough room for the star */
       display: inline-block;
       text-indent: 9999px;
-      width: 1em;
+      width: 0.8em;
       white-space: nowrap;
       cursor: pointer;
       &:before {

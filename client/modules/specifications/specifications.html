@@ -37,7 +37,12 @@
 				</div>
 				<form ng-controller="rateFilmController">
 				  <fieldset>
-				    <span class="star-cb-group"">
+				    <span class="star-cb-group">
+				      <input class="star" type="radio" id="rating-10" name="{{$parent.resultDetailsBeer.id}}Rating" ng-model="$parent.resultDetailsBeer.rating" ng-change="rate(10)" value="10" ng-checked="selectedRating === '10'" /><label for="rating-10">10</label>
+				      <input class="star" type="radio" id="rating-9" name="{{$parent.resultDetailsBeer.id}}Rating" ng-model="$parent.resultDetailsBeer.rating" ng-change="rate(9)" value="9" ng-checked="selectedRating === '9'" /><label for="rating-9">9</label>
+				      <input class="star" type="radio" id="rating-8" name="{{$parent.resultDetailsBeer.id}}Rating" ng-model="$parent.resultDetailsBeer.rating" ng-change="rate(8)" value="8" ng-checked="selectedRating === '8'" /><label for="rating-8">8</label>
+				      <input class="star" type="radio" id="rating-7" name="{{$parent.resultDetailsBeer.id}}Rating" ng-model="$parent.resultDetailsBeer.rating" ng-change="rate(7)" value="7" ng-checked="selectedRating === '7'" /><label for="rating-7">7</label>
+				      <input class="star" type="radio" id="rating-6" name="{{$parent.resultDetailsBeer.id}}Rating" ng-model="$parent.resultDetailsBeer.rating" ng-change="rate(6)" value="6" ng-checked="selectedRating === '6'" /><label for="rating-6">6</label>
 				      <input class="star" type="radio" id="rating-5" name="{{$parent.resultDetailsBeer.id}}Rating" ng-model="$parent.resultDetailsBeer.rating" ng-change="rate(5)" value="5" ng-checked="selectedRating === '5'" /><label for="rating-5">5</label>
 				      <input class="star" type="radio" id="rating-4" name="{{$parent.resultDetailsBeer.id}}Rating" ng-model="$parent.resultDetailsBeer.rating" ng-change="rate(4)" value="4" ng-checked="selectedRating === '4'" /><label for="rating-4">4</label>
 				      <input class="star" type="radio" id="rating-3" name="{{$parent.resultDetailsBeer.id}}Rating" ng-model="$parent.resultDetailsBeer.rating" ng-change="rate(3)" value="3" ng-checked="selectedRating === '3'" /><label for="rating-3">3</label>
