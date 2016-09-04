@@ -10,7 +10,7 @@ $yellow: #ffc602;
   text-align: right;
   display: flex;
   justify-content:center;
-  margin-top: 8px;
+  margin: 18px 10px 10px;
 
   
   /* remove inline-block whitespace */
@@ -46,7 +46,7 @@ $yellow: #ffc602;
       text-shadow: 0 0 1px #333;
     }
   }
-  
+
   /* the hidden clearer */
   & > .star-cb-clear + label {
     text-indent: -9999px;

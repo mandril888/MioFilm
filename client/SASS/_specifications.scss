@@ -115,11 +115,20 @@
 	border: 1px solid grey;
 	box-shadow: 0 0 10px grey;
 
+	@media screen and (max-width: 550px){
+		margin: 15px;
+		padding: 10px;
+	}
+
 	.seen-info-A {
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: space-around;
+		justify-content: center;
 		margin-top: 20px;
+
+		.img-imagotipo {
+			margin: 10px;
+		}
 	}
 
 	.icons-felt {
