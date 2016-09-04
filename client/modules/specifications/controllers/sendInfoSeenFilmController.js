@@ -30,6 +30,8 @@ angular.module( 'specificationsModuleCtrl' )
 					specificationsService.postInfoSeenFilms( infoFilmSeen )
 						.then( function( data ) {
 							console.log(data)
+							$('.not-info-complete').css('display', 'none')
+							$('.info-complete').css('display', 'block')
 						})
 				} else {
 					$('.not-info-complete').css('display', 'block')
