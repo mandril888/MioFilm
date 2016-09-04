@@ -131,6 +131,11 @@
 		}
 	}
 
+	.send-info-btn {
+		text-align: center;
+		margin-bottom: 20px;
+	}
+
 	.icons-felt {
 		margin: 20px 0;
 
@@ -193,5 +198,17 @@
 	display: none;
 	background-color: #00b200;
 	border: 1px solid green;
+	color: white;
+}
+
+.btn-turquoise {
+	background: $turquoise-blue;
+	color: white;
+}
+.btn-turquoise:hover {
+	background: darken($turquoise-blue, 10%);
+	color: white;
+}
+.btn-turquoise:focus {
 	color: white;
 }
