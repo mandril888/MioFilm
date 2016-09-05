@@ -11,7 +11,7 @@
 		</div>
 	</div>
 
-	<div class="list-watched-films">
+	<div class="list-watched-films" ng-controller="listFilmsProfileController">
 		<div class="films-watched" ng-repeat="movies in infoFilmSeen">
 			<a href="/#/specifications/{{movies.id}}" target="_blank">
 				<img ng-src="http://image.tmdb.org/t/p/w500/{{ movies.poster_path}}" altSrc="{{imageNotFoundCover}}" onerror="this.src = $(this).attr('altSrc')">
@@ -19,7 +19,13 @@
 			<a href="/#/specifications/{{movies.id}}" target="_blank">
 				<p><strong>{{ movies.original_title }}</strong></p>
 			</a>
-			<p><em>{{ movies.mood }}</em> &nbsp; &nbsp; <i class="glyphicon glyphicon-star-empty star"></i> {{ movies.rate }}</p>
+			<p>
+				<em>{{ movies.mood }}</em> &nbsp;
+				<i class="glyphicon glyphicon-star-empty star"></i> {{ movies.rate }} &nbsp;
+				<a href="" ng-click="removeFilm(movies.id)"">
+					<i class="glyphicon glyphicon-remove"></i>
+				</a>
+			</p>
 		</div>
 	</div>
 

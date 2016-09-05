@@ -14,10 +14,15 @@ angular.module( 'profileService', [ ] )
 			return $http.post( '/api/info-user', nameUser )
 		}
 
+		function deleteMovie ( filmToDelete ) {
+			console.log('paso2: '+filmToDelete)
+			return $http.post( '/api/delete-film', filmToDelete )
+		}
 
 		return {
 			getSpecificationsFilm : getSpecificationsFilm,
-			getInfoUser : getInfoUser
+			getInfoUser : getInfoUser,
+			deleteMovie : deleteMovie
 		}
 
 	})
