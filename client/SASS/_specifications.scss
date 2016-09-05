@@ -182,23 +182,32 @@
 	}
 }
 
-.not-logged {
+.not-logged, .not-info-complete {
 	display: none;
 	background-color: #FA5858;
 	border: 1px solid red;
 	color: white;
+	margin: 40px;
+
+	p {
+		margin: 10px;
+		font-size: 1.3em;
+		padding-left: 25px;
+	}
 }
-.not-info-complete {
-	display: none;
-	background-color: #FA5858;
-	border: 1px solid red;
-	color: white;
-}
+
 .info-complete {
 	display: none;
 	background-color: #00b200;
 	border: 1px solid green;
 	color: white;
+	margin: 40px;
+
+	p {
+		margin: 10px;
+		font-size: 1.3em;
+		padding-left: 25px;
+	}
 }
 
 .btn-turquoise {

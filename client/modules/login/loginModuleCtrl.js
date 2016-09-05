@@ -26,7 +26,7 @@ angular.module( 'loginModuleCtrl', [ ] )
 					} else if (data.data.success === false){
 						console.log( 'LOGIN INCORRECT' );
 						$location.path( 'login' );
-						$('.failed-login').css('display', 'block');
+						$('.failed-sign-log').css('display', 'block');
 					}
 				})
 		}

@@ -23,7 +23,7 @@ angular.module( 'signinModuleCtrl', [ ] )
 					} else if (data.data.success === false){
 						console.log( 'SIGNIN INCORRECT' );
 						$location.path( 'signin' );
-						$('.failed-signin').css('display', 'block');
+						$('.failed-sign-log').css('display', 'block');
 					}
 				})
 		}
