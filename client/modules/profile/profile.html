@@ -1,16 +1,15 @@
-<div class="container">
-	<div class="header">
-		<div class="profile-img"></div>
-		<div class="title-page">
-			<p class="helvetica-font"><strong>PROFILE</strong></p>
-		</div>
-		<div class="nav-pages">
-			<a href="#">Movies seen</a>
-			<a href="#">Movies to see</a>
-			<a href="/#/" ng-click="logout()">Log out</a>
-		</div>
+<div class="header">
+	<div class="img-user"></div>
+	<div class="title-page">
+		<p class="helvetica-font"><strong>PROFILE</strong></p>
 	</div>
-
+</div>
+<div class="container">
+	<div class="nav-pages">
+		<a href="#" class="active">Movies seen</a>
+		<a href="#">Movies to see</a>
+		<p href="/#/" ng-click="logout()" class="btn btn-turquoise">Log out</p>
+	</div>
 	<div class="list-watched-films" ng-controller="listFilmsProfileController">
 		<div class="films-watched" ng-repeat="movies in infoFilmSeen">
 			<a href="/#/specifications/{{movies.id}}" target="_blank">
@@ -28,5 +27,4 @@
 			</p>
 		</div>
 	</div>
-
 </div>

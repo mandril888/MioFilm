@@ -1,15 +1,18 @@
 <div class="container">
-	<p>SIGN IN</p>
-	<form ng-submit="submit()">
-		<div class="form-group">
-			<label for="name">Name</label>
-			<input type="text" class="form-control" id="name" placeholder="Enter your name" ng-model="userName">
-		</div>
-		<div class="form-group">
-			<label for="password">Password</label>
-			<input type="password" class="form-control" id="password" placeholder="Enter password" ng-model="userPassword">
-		</div>
-		<button type="submit" class="btn btn-primary">Submit</button>
-	</form>
-	<p class="failed-signin">User exists</p>
+	<div class="sign-log">
+		<h3>SIGN UP</h3>
+		<form ng-submit="submit()">
+			<div class="form-group">
+				<label for="name">NAME</label>
+				<input type="text" class="form-control" id="name" placeholder="Enter your name" ng-model="userName">
+			</div>
+			<div class="form-group">
+				<label for="password">PASSWORD</label>
+				<input type="password" class="form-control" id="password" placeholder="Enter password" ng-model="userPassword">
+			</div>
+			<p class="info-sign-log"><em>By clicking <a href="">Sign up</a>, you agree to our <a href="">Terms</a> and that you have read our <a href="">Data Policy</a>.</em></p>
+			<button type="submit" class="btn btn-turquoise">Sign up</button>
+		</form>
+		<p class="failed-sign-log">User exists</p>
+	</div>
 </div>

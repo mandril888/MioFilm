@@ -1,16 +1,18 @@
 <div class="container">
-	<p>LOG IN</p>
-	<form ng-submit="submit()">
-		<div class="form-group">
-			<label for="name">Name</label>
-			<input type="text" class="form-control" id="name" placeholder="Enter your name" ng-model="userName">
-		</div>
-		<div class="form-group">
-			<label for="password">Password</label>
-			<input type="password" class="form-control" id="password" placeholder="Enter password" ng-model="userPassword">
-		</div>
-		<button type="submit" class="btn btn-primary">Submit</button>
-	</form>
-	<p class="failed-login">The login failed</p>
-	<p>You don't have an account?? <a href="/#/signin">Click here</a></p>
+	<div class="sign-log">
+		<h3>LOG IN</h3>
+		<form ng-submit="submit()">
+			<div class="form-group">
+				<label for="name">NAME</label>
+				<input type="text" class="form-control" id="name" placeholder="Enter your name" ng-model="userName">
+			</div>
+			<div class="form-group">
+				<label for="password">PASSWORD</label>
+				<input type="password" class="form-control" id="password" placeholder="Enter password" ng-model="userPassword">
+			</div>
+			<button type="submit" class="btn btn-turquoise">Log in</button>
+		</form>
+		<p class="failed-sign-log">The login failed</p>
+		<p class="info-sign-log">You don't have an account?? <a href="/#/signin">Click here</a></p>
+	</div>
 </div>

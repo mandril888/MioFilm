@@ -1,0 +1,53 @@
+.sign-log {
+	border: 1px solid grey;
+	border-radius: 5px;
+	color: white;
+	background-color: #cdcbcc;
+	margin: 40px 20px;
+	padding: 40px 40px 25px;
+
+	h3 {
+		border-radius: 5px 5px 0 0;
+		background-color: $turquoise-blue;
+		margin: -40px -40px 10px;
+		padding: 10px 0;
+		text-align: center;
+	}
+
+	form {
+		margin-top: 25px;
+
+		.form-group {
+			label {
+				border-left: 5px solid $turquoise-blue;
+				padding-left: 5px;
+				font-weight: normal;
+				font-size: 1.2em;
+			}
+		}
+	}
+
+	.form-control {
+		border: 1px solid $turquoise-blue;
+	}
+
+	.info-sign-log {
+		font-size: 0.9em;
+		margin: 16px 0;
+
+		a {
+			color: $turquoise-blue;
+		}
+	}
+}
+
+.btn-turquoise {
+	background-color: $turquoise-blue;
+}
+
+.failed-sign-log {
+	display: none;
+	background-color: #FA5858;
+	border: 1px solid red;
+	color: white;
+}

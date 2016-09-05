@@ -1,5 +1,68 @@
 .header {
+	background: $turquoise-blue;
+	padding: 40px 0 50px;
+	box-shadow: 0 0 15px black;
 
+	.title-page {
+		p {
+			color: white;
+			font-size: 2.5em;
+			text-align: center;
+		}
+	}
+}
+
+.img-user {
+	width: 150px;
+	height: 150px;
+	background-size: 100%;
+	position: absolute;
+	top: 175px;
+	left: 74px;
+	border-radius: 5px;
+	border: 3px solid white;
+	background-color: $turquoise-blue;
+	background: url('../img/img-user.png');
+
+	@media screen and (max-width: 625px){
+		top: 150px;
+	}
+}
+
+.nav-pages {
+	margin-top: 20px;
+	text-align: right;
+	margin-bottom: 100px;
+
+	a {
+		font-size: 1.3em;
+		color: grey;
+		margin-left: 15px;
+
+		&.active {
+			border-bottom: 4px solid $turquoise-blue;
+		}
+	}
+
+	a:hover {
+		text-decoration: none;
+		border-bottom: 2px solid $turquoise-blue;
+	}
+
+	p {
+		margin-left: 25px;
+	}
+
+	@media screen and (max-width: 625px){
+		margin-top: 140px;
+		text-align: center;
+		margin-bottom: 30px;
+	}
+	@media screen and (max-width: 399px){
+		p {
+			margin-top: 25px;
+		}
+	}
 }
 
 .list-watched-films {
