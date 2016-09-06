@@ -15,6 +15,12 @@ angular.module( 'headerModuleCtrl', [ ] )
 			$scope.hiUserName = infoToken._doc.name;
 		})
 
+		$scope.$on('insertNameHeader2', function(evt, message){
+			$('#hi-user').css('display', 'block')
+			var infoToken = parseJwt(message);
+			$scope.hiUserName = infoToken._doc.name;
+		})
+
 		function parseJwt (token) {
 			var base64Url = token.split('.')[1];
 			var base64 = base64Url.replace('-', '+').replace('_', '/');

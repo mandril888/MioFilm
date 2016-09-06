@@ -1,5 +1,5 @@
 angular.module( 'signinModuleCtrl', [ ] )
-	.controller( 'signinController' , function ( $localStorage, $scope, $location, signinService ) {
+	.controller( 'signinController' , function ( $localStorage, $rootScope, $scope, $location, signinService ) {
 
 		$scope.storage = $localStorage;
 		console.log($localStorage.token)
@@ -20,7 +20,8 @@ angular.module( 'signinModuleCtrl', [ ] )
 					if (data.data.success === true) {
 						$scope.storage.token = data.data.token;
 						console.log( 'SIGNIN CORRECT' );
-						$location.path( 'myprofile' );
+						$rootScope.$broadcast('insertNameHeader2', data.data.token);
+						$location.path( 'home' );
 					} else if (data.data.success === false){
 						console.log( 'SIGNIN INCORRECT' );
 						$location.path( 'signin' );
