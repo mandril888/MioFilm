@@ -41,6 +41,7 @@ module.exports = function(grunt) {
 			},
 			js: {
 			    files: ['client/JS/*',
+			        	'client/modules/*.js',
 			        	'client/modules/login/*.js',
 			        	'client/modules/signin/*.js',
 			        	'client/modules/profile/*.js',
@@ -59,6 +60,7 @@ module.exports = function(grunt) {
 			js:{
 				src:[
 			        	'client/Js/*',
+			        	'client/modules/*.js',
 			        	'client/modules/login/*.js',
 			        	'client/modules/signin/*.js',
 			        	'client/modules/profile/*.js',

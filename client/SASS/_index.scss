@@ -32,6 +32,18 @@ html {
 		padding-top: 10px;
 	}
 
+	.right-header {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+
+		#hi-user {
+			display: none;
+			font-size: 15px;
+			padding: 0 5px 0 0;
+		}
+	}
+
 	@media screen and (max-width: 767px){
 		p {
 			font-size: 25px;

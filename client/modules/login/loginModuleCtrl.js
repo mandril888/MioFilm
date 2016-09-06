@@ -1,5 +1,5 @@
 angular.module( 'loginModuleCtrl', [ ] )
-	.controller( 'loginController' , function ( $localStorage, $scope, $location, loginService ) {
+	.controller( 'loginController' , function ( $localStorage, $rootScope, $scope, $location, loginService ) {
 
 		$scope.storage = $localStorage;
 
@@ -22,6 +22,7 @@ angular.module( 'loginModuleCtrl', [ ] )
 						$scope.storage.token = data.data.token;
 						console.log($scope.storage.token)
 						console.log( 'LOGIN CORRECT' );
+						$rootScope.$broadcast('insertNameHeader', data.data.token);
 						$location.path( 'profile' );
 					} else if (data.data.success === false){
 						console.log( 'LOGIN INCORRECT' );

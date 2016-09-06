@@ -21,11 +21,14 @@
 	<header>
 		<nav class="my-navbar">
 			<div class="container">
-				<div class="items-header">
+				<div class="items-header" ng-controller="headerController">
 					<a href="/#/home"><img class="miofilm-logo" src="img/miofilm-logo-white.png"></img></a>
 					<a href="/#/home"><img class="miofilm-imagotipo" src="img/miofilm-imagotipo.png"></img></a>
 					<p class="tagline-header androgyne-font">feel the movies</p>
-					<a href="/#/login"><img class="profile-img" src="img/profile-img.png"></img></a>
+					<div class="right-header">
+						<p id="hi-user">Hi {{hiUserName}}</p>
+						<a href="/#/login"><img class="profile-img" src="img/profile-img.png"></img></a>
+					</div>
 				</div>
 			</div>
 		</nav>
