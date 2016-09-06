@@ -163,3 +163,17 @@ footer {
 	clear: both;
 	text-align: center;
 }
+
+.modal {
+	margin-top: 150px;
+}
+
+.modal-body {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+
+	h3 {
+		margin-top: 10px;
+	}
+}
