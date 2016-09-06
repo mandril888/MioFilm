@@ -15,9 +15,9 @@ angular.module( 'config', [ ] )
 					templateUrl: 'modules/login/login.html',
 					controller: 'loginController'
 				})
-				.when('/signin',{
-					templateUrl: 'modules/signin/signin.html',
-					controller: 'signinController'
+				.when('/signup',{
+					templateUrl: 'modules/signup/signup.html',
+					controller: 'signupController'
 				})
 				.when('/profile',{
 					templateUrl: 'modules/profile/profile.html',

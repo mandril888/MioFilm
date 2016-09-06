@@ -1,1 +1,1 @@
-angular.module( 'services', [ 'homeService', 'specificationsService', 'loginService', 'signinService', 'profileService' ] );
+angular.module( 'services', [ 'homeService', 'specificationsService', 'loginService', 'signupService', 'profileService' ] );
