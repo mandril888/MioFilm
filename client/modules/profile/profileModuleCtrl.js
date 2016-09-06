@@ -1,8 +1,6 @@
 angular.module( 'profileModuleCtrl', [ ] )
 	.controller( 'profileController' , function ( $localStorage, $scope, $location, profileService ) {
 
-
-
 		if (!$localStorage.token) {
 			$location.path( 'login' )
 		}
@@ -41,6 +39,8 @@ angular.module( 'profileModuleCtrl', [ ] )
 								$scope.infoFilmSeen.push(userInfoFilm);
 							})
 					})
+				} else {
+					$('.no-films-stored').css('display', 'block')
 				}
 			})
 
