@@ -16,6 +16,9 @@ angular.module( 'specificationsModuleCtrl' )
 		})
 
 		$scope.sendInfoSeenFilm = function ( idFilm ) {
+			$('.not-info-complete').css('display', 'none');
+			$('.info-complete').css('display', 'none');
+			$('.not-logged').css('display', 'none')
 
 			var idFilmRecived = idFilm;
 

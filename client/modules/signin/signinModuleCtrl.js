@@ -8,6 +8,7 @@ angular.module( 'signinModuleCtrl', [ ] )
 		}
 
 		$scope.submit = function() {
+			$('.failed-sign-log').css('display', 'none');
 			var user = {
 				userName: $scope.userName,
 				userPassword: $scope.userPassword

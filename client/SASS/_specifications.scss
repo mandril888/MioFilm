@@ -191,20 +191,31 @@
 	border: 1px solid red;
 	color: white;
 	margin: 40px;
+	animation-name: fadeIn;
+	animation-duration: 1s;
+	animation-timing-function: ease-in-out;
 
 	p {
 		margin: 10px;
 		font-size: 1.3em;
 		padding-left: 25px;
+
+		a {
+			color: $turquoise-blue;
+			text-shadow: 0 0 5px black;
+		}
 	}
 }
 
 .info-complete {
 	display: none;
-	background-color: #00b200;
+	background-color: #19ff19;
 	border: 1px solid green;
 	color: white;
 	margin: 40px;
+	animation-name: fadeIn;
+	animation-duration: 1s;
+	animation-timing-function: ease-in-out;
 
 	p {
 		margin: 10px;
