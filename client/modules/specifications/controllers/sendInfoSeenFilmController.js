@@ -5,9 +5,9 @@ angular.module( 'specificationsModuleCtrl' )
 		var rateRecived;
 		var moodRecived = "";
 
-		$scope.$on('seeFilmSend', function(evt, message){
-			idFilmRecived = message;
-		})
+		// $scope.$on('seeFilmSend', function(evt, message){
+		// 	idFilmRecived = message;
+		// })
 		$scope.$on('rateSend', function(evt, message){
 			rateRecived = message;
 		})
@@ -15,7 +15,9 @@ angular.module( 'specificationsModuleCtrl' )
 			moodRecived = message;
 		})
 
-		$scope.sendInfoSeenFilm = function () {
+		$scope.sendInfoSeenFilm = function ( idFilm ) {
+
+			var idFilmRecived = idFilm;
 
 			if ($localStorage.token) {
 				if(idFilmRecived && rateRecived && moodRecived) {

@@ -12,12 +12,15 @@ $yellow: #ffc602;
   justify-content:center;
   margin: 18px 10px 10px;
 
-  
   /* remove inline-block whitespace */
   font-size: 0;
   * {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
+
+    @media screen and (max-width: 450px){
+      * { font-size: 0.8rem; }
+    }
 
   /* flip the order so we can use the + and ~ combinators */
   unicode-bidi: bidi-override;
@@ -28,7 +31,7 @@ $yellow: #ffc602;
       /* only enough room for the star */
       display: inline-block;
       text-indent: 9999px;
-      width: 0.8em;
+      width: 1em;
       white-space: nowrap;
       cursor: pointer;
       &:before {
@@ -36,6 +39,9 @@ $yellow: #ffc602;
         text-indent: -9999px;
         content: $unchecked-star;
         color: $unchecked-color;
+      }
+      @media screen and (max-width: 450px){
+        width: 0.8em;
       }
     }
     &:checked ~ label:before,

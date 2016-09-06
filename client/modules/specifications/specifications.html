@@ -32,9 +32,10 @@
 		</div>
 		<div class="film-seen">
 			<div class="seen-info-A">
-				<div ng-controller="seeFilmController">
+				<!-- <div ng-controller="seeFilmController">
 					<a ng-click="movieSeen(specificationsFilmSearched.id)" href=""><img class="img-imagotipo" src="../../img/miofilm-imagotipo-grey.png" alt=""></a>
-				</div>
+				</div> -->
+				<h3 class="androgyne-font">If you have seen the movie, rate it!</h3>
 				<form ng-controller="rateFilmController">
 				  <fieldset>
 				    <span class="star-cb-group">
@@ -106,7 +107,7 @@
 				</ul>
 			</div>
 			<div class="send-info-btn" ng-controller="sendInfoSeenFilmController">
-				<a class="btn btn-turquoise" ng-click="sendInfoSeenFilm()" href="">Save info in profile</a>
+				<a class="btn btn-turquoise" ng-click="sendInfoSeenFilm(specificationsFilmSearched.id)" href="">Save info in profile</a>
 			</div>
 		</div>
 	</div>
