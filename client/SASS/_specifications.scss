@@ -175,6 +175,10 @@
 							width: 40px;
 						}
 					}
+					a:focus {
+						border-radius: 50%;
+						border: 2px solid $turquoise-blue;
+					}
 				}
 			}
 		}
