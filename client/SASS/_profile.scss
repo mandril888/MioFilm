@@ -51,6 +51,10 @@
 		transition: all 0.5s ease;
 	}
 
+	a:focus {
+		text-decoration: none;
+	}
+
 	p {
 		margin-left: 25px;
 	}
