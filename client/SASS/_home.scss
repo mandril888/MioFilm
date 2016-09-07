@@ -107,6 +107,10 @@
 					.mood-icon {
 						width: 65px;
 					}
+					.mood-icon:hover {
+						border: 1px solid white;
+						// transform: scale(1.3);
+					}
 				}
 			}
 		}
@@ -150,9 +154,7 @@
 	background: darken($sad-blue, 10%);
 }
 
-.mood-icon:hover {
-	border: 1px solid white;
-}
+
 
 .star {
 	color: yellow;
