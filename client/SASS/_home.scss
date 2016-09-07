@@ -288,44 +288,19 @@
 	display: inline-block;
 	width: 80%;
 	margin-top: 20px;
+	text-align: center;
 
-	div {
-		display: flex;
-		justify-content: space-around;
+	a {
+		background-color: $turquoise-blue;
+		color: white;
+		font-size: 2em;
+		border-radius: 50%;
+		box-shadow: 0 0 5px grey;
+		padding: 10px;
+		text-align: center;
+	}
 
-		.repeat-search {
-			display: none;
-			float: left;
-			color: $turquoise-blue;
-			font-size: 1.3em;
-			&:hover {
-				color: $turquoise-blue;
-			}
-			@media screen and (max-width: 460px){
-				clear: both;
-				display: inline-block;
-				margin: 10px 0;
-				text-align: center;
-			}
-		}
-
-		.go-top {
-			color: $turquoise-blue;
-			float: left;
-			font-size: 1.3em;
-			&:hover {
-				color: $turquoise-blue;
-			}
-			@media screen and (max-width: 460px){
-				clear: both;
-				display: inline-block;
-				text-align: center;
-			}
-		}
-
-		@media screen and (max-width: 460px){
-			clear: both;
-			display: inline-block;
-		}
+	&:hover {
+		transform: scale(1.1);
 	}
 }
