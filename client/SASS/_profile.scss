@@ -74,8 +74,9 @@
 .list-watched-films {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-around;
+	justify-content: center;
 	text-align: center;
+	margin-bottom: 40px;
 	// margin: 60px 0 50px;
 	// padding: 40px 25px;
 	// border: 1px solid $turquoise-blue;
@@ -83,7 +84,7 @@
 
 	.films-watched {
 		margin: 20px 30px;
-		width: 220px;
+		width: 170px;
 
 		p {
 			margin-top:5px;
@@ -91,8 +92,8 @@
 		}
 
 		img {
-			width: 200px;
-			height: 300px;
+			width: 150px;
+			height: 225px;
 			margin-bottom: 5px;
 			border-radius: 5px;
 		}
