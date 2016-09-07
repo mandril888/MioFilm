@@ -164,21 +164,47 @@
 }
 
 .questions-to-filter {
-	display: none;
+	// display: none;
 	background-color: $turquoise-blue;
-	padding: 0 -800px;
+	padding: 100px 150px;
 	margin-bottom: 40px;
 	box-shadow: inset 0 0 25px gray;
 	overflow: hidden;
+
+	@media screen and (max-width: 1020px){
+		padding: 100px;
+	}
+
+	@media screen and (max-width: 912px){
+		padding: 75px;
+	}
+
+	@media screen and (max-width: 800px){
+		padding: 60px;
+	}
+
+	@media screen and (max-width: 750px){
+		padding: 50px;
+	}
 }
 
 
 #question1, #question2, #question3, #question4 {
-	display: none;
-	margin: 0 -800px;
 
-	p, a {
+	p {
 		color: white;
+		line-height: 2;
+	}
+
+	a {
+		color: white;
+		line-height: 2;
+
+		@media screen and (max-width: 756px){
+			text-align: center;
+			display: block;
+			margin: 5px 0;
+		}
 	}
 }
 
@@ -187,7 +213,7 @@
 }
 
 .step {
-	margin-left: 500px;
+	text-align: right;
 	margin-bottom: 20px;
 }
 
@@ -200,7 +226,7 @@
 	border: 2px solid white;
 	border-radius: 5px;
 	padding: 5px;
-	margin-right: 20px;
+	margin: 10px;
 
 	&:hover {
 		background: darken($turquoise-blue, 10%);
@@ -209,6 +235,10 @@
 	&:focus {
 		text-decoration: none;
 	}
+
+	@media screen and (max-width: 865px){
+			margin: 10px 5px 10px 0;
+		}
 }
 
 .luck-search {

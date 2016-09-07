@@ -73,8 +73,10 @@
 	<div id="question1" ng-controller="question1Controller">
 		<p class="step">STEP 1/3</p>
 		<p class="question-step">Do you want to watch a movie about your mood or its opposite?</p>
-		<a class="btn-step" href="/#/" ng-click="filterSetMoodFilm('mood')">My mood</a>
-		<a class="btn-step" href="/#/" ng-click="filterSetMoodFilm('opposite')">The opposite</a>
+		<div>
+			<a class="btn-step" href="/#/" ng-click="filterSetMoodFilm('mood')">My mood</a>
+			<a class="btn-step" href="/#/" ng-click="filterSetMoodFilm('opposite')">The opposite</a>
+		</div>
 	</div>
 	<div id="question2" ng-controller="question2Controller">
 		<p class="step">STEP 2/3</p>
