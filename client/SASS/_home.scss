@@ -164,7 +164,7 @@
 }
 
 .questions-to-filter {
-	// display: none;
+	display: none;
 	background-color: $turquoise-blue;
 	padding: 100px 150px;
 	margin-bottom: 40px;
@@ -189,7 +189,11 @@
 }
 
 
-#question1, #question2, #question3, #question4 {
+#question1, #question2, #question3 {
+
+	display: none;
+	animation-name: fadeIn;
+	animation-duration: 1s;
 
 	p {
 		color: white;
@@ -208,7 +212,36 @@
 }
 
 #question4 {
+
+	display: none;
+	animation-name: fadeIn;
+	animation-duration: 1s;
 	text-align: center;
+
+	.luck-search {
+		border: 2px solid white;
+		border-radius: 5px;
+		padding: 15px;
+		font-size: 35px;
+		color: white;
+
+		&:hover {
+			background: darken($turquoise-blue, 10%);
+			text-decoration: none;
+		}
+		&:focus {
+			text-decoration: none;
+		}
+
+		@media screen and (max-width: 756px){
+			font-size: 25px;
+		}
+
+		@media screen and (max-width: 360px){
+			padding: 10px;
+			font-size: 20px;
+		}
+	}
 }
 
 .step {
@@ -238,21 +271,6 @@
 	@media screen and (max-width: 865px){
 			margin: 10px 5px 10px 0;
 		}
-}
-
-.luck-search {
-	border: 2px solid white;
-	border-radius: 5px;
-	padding: 15px;
-	font-size: 35px;
-
-	&:hover {
-		background: darken($turquoise-blue, 10%);
-		text-decoration: none;
-	}
-	&:focus {
-		text-decoration: none;
-	}
 }
 
 .bottom-films {

@@ -1,6 +1,8 @@
 angular.module( 'homeModuleCtrl' )
 	.controller( 'question1Controller' , function ( $rootScope, $scope ) {
 
+		$scope.visible = false;
+
 		var oMoodsOpposite = {
 			Mad: 'Scared',
 			Scared: 'Mad',
@@ -18,13 +20,8 @@ angular.module( 'homeModuleCtrl' )
 		})
 
 		$scope.filterSetMoodFilm = function ( info ) {
-			// $('#question1').animate({
-			// 	'padding-left': '2200px'
-			// }, 1000).hide(0);
-			// $('#question2').css('display', 'block');
-			// $('#question2').delay(1000).animate({
-			// 	'padding-left': '950px'
-			// }, 1000);
+			$('#question2').css('display', 'block');
+			$('#question1').css('display', 'none');
 
 			if ( info === 'mood') {
 				moodSearch = moodFeelingRecived;

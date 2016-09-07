@@ -1,9 +1,19 @@
-.default{
-    opacity: 0;
+.animation {
+	transition: ease-in-out 0.5s;
 }
 
-.fade{
-    -webkit-transition: opacity 2s; /* For Safari 3.1 to 6.0 */
-    transition: opacity 2s;
-    opacity: 1;
+.animation.ng-enter {
+	opacity: 0;
+}
+
+.animation.ng-enter-active {
+	opacity: 1;
+}
+
+.animation.ng-leave {
+	opacity: 1;
+}
+
+.animation.ng-leave-active {
+	opacity: 0;
 }
