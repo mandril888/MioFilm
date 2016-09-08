@@ -11,9 +11,12 @@ var apiRoutes		= require('./app/routes/apiRoutes');
 var createUser		= require('./app/functions/createUser')
 
 // configuration ================================
-// var port = process.env.PORT || 8085;
+var port = process.env.PORT || 8085;
 
-var MONGO_URL = process.env.MONGO_URL;
+// var MONGO_URL = config.database || process.env.MONGO_URL;
+var MONGO_URL = process.env.MONGO_URL || config.database;
+
+console.log(MONGO_URL)
 
 mongoose.connect(MONGO_URL);
 
