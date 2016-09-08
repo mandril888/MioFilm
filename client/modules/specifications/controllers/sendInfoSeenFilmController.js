@@ -5,9 +5,6 @@ angular.module( 'specificationsModuleCtrl' )
 		var rateRecived;
 		var moodRecived = "";
 
-		// $scope.$on('seeFilmSend', function(evt, message){
-		// 	idFilmRecived = message;
-		// })
 		$scope.$on('rateSend', function(evt, message){
 			rateRecived = message;
 		})

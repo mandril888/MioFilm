@@ -7,7 +7,11 @@ usersSchema = mongoose.model('users', new Schema({
 	name: {type:String, trim:true},
 	password: {type:String, trim:true},
 	admin: Boolean,
-	filmsWatched: Object,
+	filmsWatched: [{
+		idFilm: Number,
+		rate: Number,
+		mood: String
+	}],
 	filmsToSee: Object
 }));
 
