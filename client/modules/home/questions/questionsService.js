@@ -17,7 +17,7 @@ angular.module( 'homeService' )
 		}
 
 		// REVISAR - esta petición es la misma que la de specificationsService
-		var urlToGetInfoFilm = 'http://api.themoviedb.org/3/movie/<ID_MOVIE>?api_key=71bd8c83c5cc06c197435d2165ac52e4';
+		var urlToGetInfoFilm = 'https://api.themoviedb.org/3/movie/<ID_MOVIE>?api_key=71bd8c83c5cc06c197435d2165ac52e4';
 
 		function getSpecificationsFilm ( idFilmToSearch ) {
 			var urlToSearchFilmChanged = urlToGetInfoFilm.replace('<ID_MOVIE>', idFilmToSearch)
