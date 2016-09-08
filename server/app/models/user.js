@@ -13,9 +13,7 @@ usersSchema = mongoose.model('users', new Schema({
 		mood: String
 	}],
 	filmsToSee: [{
-		idFilm: Number,
-		rate: Number,
-		mood: String
+		idFilm: Number
 	}]
 }));
 

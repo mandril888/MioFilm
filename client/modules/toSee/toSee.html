@@ -15,14 +15,14 @@
 			<a href="/#/specifications/{{movies.id}}" target="_blank">
 				<img ng-src="http://image.tmdb.org/t/p/w500/{{ movies.poster_path}}" altSrc="{{imageNotFoundCover}}" onerror="this.src = $(this).attr('altSrc')">
 			</a>
-			<a href="/#/specifications/{{movies.id}}" target="_blank">
-				<p><strong>{{ movies.original_title }}</strong></p>
-			</a>
-			<p>
-				<a href="" ng-click="removeFilm(movies.id)"">
+			<div>
+				<a href="/#/specifications/{{movies.id}}" target="_blank" style="display:inline-block">
+					<p><strong>{{ movies.original_title }}</strong></p>
+				</a>
+				<a href="" ng-click="removeFilm(movies.id)" style="display:inline-block">
 					<i class="glyphicon glyphicon-remove"></i>
 				</a>
-			</p>
+			</div>
 		</div>
 		<div class="no-films-stored">No movies to see!</div>
 	</div>
