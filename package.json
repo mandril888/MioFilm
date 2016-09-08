@@ -11,8 +11,8 @@
     "type": "git",
     "url": "git+https://github.com/mandril888/MioFilm.git"
   },
-  "engines" : {
-    "node" : "6.2.1"
+  "engines": {
+    "node": "6.2.1"
   },
   "author": "",
   "license": "ISC",
@@ -24,7 +24,9 @@
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "grunt": "^1.0.1",
-    "mongodb": "^2.2.9"
+    "mongodb": "^2.2.9",
+    "mongoose": "^4.6.0",
+    "morgan": "^1.7.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.7",
