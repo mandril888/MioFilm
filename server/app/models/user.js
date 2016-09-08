@@ -12,7 +12,11 @@ usersSchema = mongoose.model('users', new Schema({
 		rate: Number,
 		mood: String
 	}],
-	filmsToSee: Object
+	filmsToSee: [{
+		idFilm: Number,
+		rate: Number,
+		mood: String
+	}]
 }));
 
 module.exports = usersSchema;

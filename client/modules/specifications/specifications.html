@@ -30,11 +30,11 @@
 		<div class="info-complete">
 			<p>Info saved!&nbsp;&nbsp;:)</p>
 		</div>
+		<div class="send-info-btn" ng-controller="sendInfoToSeeFilmController">
+				<a class="btn btn-turquoise" ng-click="sendInfoToSeeFilm(specificationsFilmSearched.id)" href="">Save movie to see <i class="glyphicon glyphicon-send"></i></a>
+			</div>
 		<div class="film-seen">
 			<div class="seen-info-A">
-				<!-- <div ng-controller="seeFilmController">
-					<a ng-click="movieSeen(specificationsFilmSearched.id)" href=""><img class="img-imagotipo" src="../../img/miofilm-imagotipo-grey.png" alt=""></a>
-				</div> -->
 				<h3 class="androgyne-font">If you have seen the movie, rate it!</h3>
 				<form ng-controller="rateFilmController">
 				  <fieldset>

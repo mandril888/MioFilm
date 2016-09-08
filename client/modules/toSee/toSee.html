@@ -6,12 +6,12 @@
 </div>
 <div class="container">
 	<div class="nav-pages">
-		<a href="/#/profile" class="active">Seen movies</a>
-		<a href="/#/profile/to-see">Movies to see</a>
+		<a href="/#/profile">Seen movies</a>
+		<a href="/#/profile//to-see" class="active">Movies to see</a>
 		<p href="/#/" ng-click="logout()" class="btn btn-turquoise">Log out</p>
 	</div>
-	<div class="list-watched-films" ng-controller="listFilmsProfileController">
-		<div class="films-watched" ng-repeat="movies in infoFilmSeen">
+	<div class="list-watched-films" ng-controller="listFilmsToSeeController">
+		<div class="films-watched" ng-repeat="movies in infoFilmToSee">
 			<a href="/#/specifications/{{movies.id}}" target="_blank">
 				<img ng-src="http://image.tmdb.org/t/p/w500/{{ movies.poster_path}}" altSrc="{{imageNotFoundCover}}" onerror="this.src = $(this).attr('altSrc')">
 			</a>
@@ -19,13 +19,11 @@
 				<p><strong>{{ movies.original_title }}</strong></p>
 			</a>
 			<p>
-				<em>{{ movies.mood }}</em> &nbsp;
-				<i class="glyphicon glyphicon-star-empty star"></i> {{ movies.rate }} &nbsp;
 				<a href="" ng-click="removeFilm(movies.id)"">
 					<i class="glyphicon glyphicon-remove"></i>
 				</a>
 			</p>
 		</div>
-		<div class="no-films-stored">No seen movies!</div>
+		<div class="no-films-stored">No movies to see!</div>
 	</div>
 </div>

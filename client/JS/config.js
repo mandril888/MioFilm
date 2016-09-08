@@ -23,5 +23,9 @@ angular.module( 'config', [ ] )
 					templateUrl: 'modules/profile/profile.html',
 					controller: 'profileController'
 				})
+				.when('/profile/to-see',{
+					templateUrl: 'modules/toSee/toSee.html',
+					controller: 'toSeeController'
+				})
 				.otherwise({ redirectTo: '/' }); ;
 	})
