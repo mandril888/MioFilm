@@ -11,9 +11,11 @@ var apiRoutes		= require('./app/routes/apiRoutes');
 var createUser		= require('./app/functions/createUser')
 
 // configuration ================================
-var port = process.env.PORT || 8085;
+// var port = process.env.PORT || 8085;
 
-mongoose.connect(config.database);
+var MONGO_URL = process.env.MONGO_URL;
+
+mongoose.connect(MONGO_URL);
 
 app.use(express.static( __dirname + '/../client'));
 
