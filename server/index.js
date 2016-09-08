@@ -18,7 +18,7 @@ var MONGO_URL = process.env.MONGO_URL || config.database;
 
 console.log(MONGO_URL)
 
-mongoose.connect(MONGO_URL);
+mongoose.connect('mongodb://mandril888:Ruin$$08@ds019806.mlab.com:19806/miofilm');
 
 app.use(express.static( __dirname + '/../client'));
 
