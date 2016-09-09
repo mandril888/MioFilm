@@ -92,7 +92,7 @@
 		text-align: center;
 
 		li {
-			margin: 10px;
+			margin: 15px 10px;
 
 			.individual-icon {
 				a {
@@ -112,6 +112,14 @@
 					}
 				}
 			}
+		}
+
+		@media screen and (max-width: 625px){
+			margin: 15px 42px;
+		}
+
+		@media screen and (max-width: 342px){
+			margin: 15px 10px;
 		}
 	}
 }
