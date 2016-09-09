@@ -1,21 +1,14 @@
 // * { transition: all 1s ease; }
 
-html{
+html {
 	background: white;
-	position: relative;
-	min-height: 100%;
 }
 
-footer{
-	margin-top: 20px;
-	position: absolute;
-}
-
-.androgyne-font {
+.androgyne-font { 
 	font-family: "Androgyne Medium", Verdana, Tahoma;
 }
 
-.helvetica-font {
+.helvetica-font { 
 	font-family: "Helvetica", Verdana, Tahoma;
 }
 
@@ -112,6 +105,10 @@ footer{
 		margin: 5px auto;
 		height: 30px;
 	}
+}
+
+footer {
+	margin-top: 20px;
 }
 
 .items-footer {
