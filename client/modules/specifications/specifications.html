@@ -22,20 +22,20 @@
 			</div>
 		</div>
 		<div class="not-logged">
-			<p>You are not logged!&nbsp;&nbsp;:(&nbsp;&nbsp;&nbsp;&nbsp;<a href="/#/login">Log in</a></p>
+			<p>¡No estás logueado!&nbsp;&nbsp;:(&nbsp;&nbsp;&nbsp;&nbsp;<a href="/#/login">Log in</a></p>
 		</div>
 		<div class="not-info-complete">
-			<p>You miss some info!&nbsp;&nbsp;:(</p>
+			<p>¡Falta algún campo!&nbsp;&nbsp;:(</p>
 		</div>
 		<div class="info-complete">
-			<p>Info saved!&nbsp;&nbsp;:)</p>
+			<p>¡Información guardada!&nbsp;&nbsp;:)</p>
 		</div>
 		<div class="send-info-toSee-btn" ng-controller="sendInfoToSeeFilmController">
-				<a class="btn btn-turquoise" ng-click="sendInfoToSeeFilm(specificationsFilmSearched.id)" href="">Save movie to see <i class="glyphicon glyphicon-send"></i></a>
+				<a class="btn btn-turquoise" ng-click="sendInfoToSeeFilm(specificationsFilmSearched.id)" href="">Guardar película para verla<i class="glyphicon glyphicon-send"></i></a>
 			</div>
 		<div class="film-seen">
 			<div class="seen-info-A">
-				<h3 class="androgyne-font">If you have seen the movie, rate it!</h3>
+				<h3 class="androgyne-font">Si has visto esta película, ¡valórala!</h3>
 				<form ng-controller="rateFilmController">
 				  <fieldset>
 				    <span class="star-cb-group">
@@ -54,7 +54,7 @@
 				</form>
 			</div>
 			<div class="icons-felt" ng-controller="moodFilmController">
-				<h3 class="androgyne-font">How did you feel seeing the film?</h3>
+				<h3 class="androgyne-font">¿Que has sentido al ver esta película?</h3>
 				<ul>
 					<li>
 						<div class="individual-icon">
@@ -107,7 +107,7 @@
 				</ul>
 			</div>
 			<div class="send-info-btn" ng-controller="sendInfoSeenFilmController">
-				<a class="btn btn-turquoise" ng-click="sendInfoSeenFilm(specificationsFilmSearched.id)" href="">Save info in profile <i class="glyphicon glyphicon-send"></i></a>
+				<a class="btn btn-turquoise" ng-click="sendInfoSeenFilm(specificationsFilmSearched.id)" href="">Guardar película vista<i class="glyphicon glyphicon-send"></i></a>
 			</div>
 		</div>
 	</div>

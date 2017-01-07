@@ -13,7 +13,7 @@
 <div class="container" ng-controller="moodsController">
 
 	<div class="icons-feelings">
-		<h1 class="androgyne-font">How do you feel today?</h1>
+		<h1 class="androgyne-font">Como te sientes hoy?</h1>
 		<ul>
 			<li>
 				<div class="individual-icon">
@@ -28,7 +28,7 @@
 					<a href="/#/" ng-click="filterSelectedFeelsMood('Scared')">
 						<img class="mood-icon go-dawn" src="img/Scared.png" alt="Scared icon" href="" title="Rejected, confused, helpless, submissive, insecure or anxious">
 					</a>
-					<a class="btn btn-scared go-dawn" href="/#/" role="button" title="Rejected, confused, helpless, submissive, insecure or anxious" ng-click="filterSelectedFeelsMood('Scared')">Scared</a>
+					<a class="btn btn-scared go-dawn" href="/#/" role="button" title="Rejected, confused, helpless, submissive, insecure or anxious" ng-click="filterSelectedFeelsMood('Scared')"></a>
 				</div>
 			</li>
 			<li>
@@ -44,7 +44,7 @@
 					<a href="/#/" ng-click="filterSelectedFeelsMood('Powerful')">
 						<img class="mood-icon go-dawn" src="img/Powerful.png" alt="Powerful icon" href="" title="Faithful, important, hopeful, appreciated, respected or proud">
 					</a>
-					<a class="btn btn-powerful go-dawn" href="/#/" role="button" title="Faithful, important, hopeful, appreciated, respected or proud" ng-click="filterSelectedFeelsMood('Powerful')">Powerful</a>
+					<a class="btn btn-powerful go-dawn" href="/#/" role="button" title="Faithful, important, hopeful, appreciated, respected or proud" ng-click="filterSelectedFeelsMood('Powerful')">Poderoso</a>
 				</div>
 			</li>
 			<li>
@@ -52,7 +52,7 @@
 					<a href="/#/" ng-click="filterSelectedFeelsMood('Peaceful')">
 						<img class="mood-icon go-dawn" src="img/Peaceful.png" alt="Peaceful icon" href="" title="Content, thoughtful, intimate, loving, trusting or nurturing">
 					</a>
-					<a class="btn btn-paceful go-dawn" href="/#/" role="button" title="Content, thoughtful, intimate, loving, trusting or nurturing" ng-click="filterSelectedFeelsMood('Peaceful')">Peaceful</a>
+					<a class="btn btn-paceful go-dawn" href="/#/" role="button" title="Content, thoughtful, intimate, loving, trusting or nurturing" ng-click="filterSelectedFeelsMood('Peaceful')">Tranquilo</a>
 				</div>
 			</li>
 			<li>
@@ -60,7 +60,7 @@
 					<a href="/#/" ng-click="filterSelectedFeelsMood('Sad')">
 						<img class="mood-icon go-dawn" src="img/Sad.png" alt="Sad icon" href="" title="Guilty, ashamed, depressed, lonely, bored or sleepy">
 					</a>
-					<a class="btn btn-sad go-dawn" href="/#/" role="button" title="Guilty, ashamed, depressed, lonely, bored or sleepy" ng-click="filterSelectedFeelsMood('Sad')">Sad</a>
+					<a class="btn btn-sad go-dawn" href="/#/" role="button" title="Guilty, ashamed, depressed, lonely, bored or sleepy" ng-click="filterSelectedFeelsMood('Sad')">Triste</a>
 				</div>
 			</li>
 		</ul>
@@ -71,33 +71,33 @@
 
 <div class="questions-to-filter">
 	<div id="question1" ng-id="visible" ng-controller="question1Controller">
-		<p class="step">STEP 1/3</p>
-		<p class="question-step">Do you want to watch a movie about your mood or its opposite?</p>
+		<p class="step">PASO 1/3</p>
+		<p class="question-step">Quieres ver una película de tu estado o del opuesto?</p>
 		<div>
-			<a class="btn-step" href="/#/" ng-click="filterSetMoodFilm('mood')">My mood</a>
-			<a class="btn-step" href="/#/" ng-click="filterSetMoodFilm('opposite')">The opposite</a>
+			<a class="btn-step" href="/#/" ng-click="filterSetMoodFilm('mood')">Mi estado</a>
+			<a class="btn-step" href="/#/" ng-click="filterSetMoodFilm('opposite')">Opuesto</a>
 		</div>
 	</div>
 	<div id="question2" ng-controller="question2Controller">
-		<p class="step">STEP 2/3</p>
-		<p class="question-step">with a duration of...</p>
-		<a class="btn-step" href="/#/" ng-click="filterSetDurationFilm('0','300')">It doesn't matter</a>
-		<a class="btn-step" href="/#/" ng-click="filterSetDurationFilm('0','90')">Less than 90'</a>
-		<a class="btn-step" href="/#/" ng-click="filterSetDurationFilm('90','300')">More than 90'</a>
-		<a class="btn-step" href="/#/" ng-click="filterSetDurationFilm('90','120')">Between 90' and 120'</a>
-		<a class="btn-step" href="/#/" ng-click="filterSetDurationFilm('120','300')">More than 120'</a>
+		<p class="step">PASO 2/3</p>
+		<p class="question-step">con una duración de...</p>
+		<a class="btn-step" href="/#/" ng-click="filterSetDurationFilm('0','300')">No importa</a>
+		<a class="btn-step" href="/#/" ng-click="filterSetDurationFilm('0','90')">Menos de 90'</a>
+		<a class="btn-step" href="/#/" ng-click="filterSetDurationFilm('90','300')">Más de 90'</a>
+		<a class="btn-step" href="/#/" ng-click="filterSetDurationFilm('90','120')">Entre 90' y 120'</a>
+		<a class="btn-step" href="/#/" ng-click="filterSetDurationFilm('120','300')">Más de 120'</a>
 	</div>
 	<div id="question3" ng-controller="question3Controller">
-		<p class="step">STEP 3/3</p>
-		<p class="question-step">and produced in...</p>
-		<a class="btn-step" href="/#/" ng-click="filterSetProduced('0000')">Any time</a>
-		<a class="btn-step" href="/#/" ng-click="filterSetProduced('1980')">Older than 1980</a>
-		<a class="btn-step" href="/#/" ng-click="filterSetProduced('1990')">Older than 1990</a>
-		<a class="btn-step" href="/#/" ng-click="filterSetProduced('2000')">Older than 2000</a>
-		<a class="btn-step" href="/#/" ng-click="filterSetProduced('2010')">Older than 2010</a>
+		<p class="step">PASO 3/3</p>
+		<p class="question-step">producida en...</p>
+		<a class="btn-step" href="/#/" ng-click="filterSetProduced('0000')">Cualquier momento</a>
+		<a class="btn-step" href="/#/" ng-click="filterSetProduced('1980')">1980 o superior</a>
+		<a class="btn-step" href="/#/" ng-click="filterSetProduced('1990')">1990 o superior</a>
+		<a class="btn-step" href="/#/" ng-click="filterSetProduced('2000')">2000 o superior</a>
+		<a class="btn-step" href="/#/" ng-click="filterSetProduced('2010')">2010 o superior</a>
 	</div>
 	<div id="question4" ng-controller="question4Controller">
-		<a href="/#/" ng-click="searchFilmWithFilter()" class="luck-search"><span>I'll have luck</span></a>
+		<a href="/#/" ng-click="searchFilmWithFilter()" class="luck-search"><span>Buscar</span></a>
 	</div>
 </div>
 
