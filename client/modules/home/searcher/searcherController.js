@@ -7,7 +7,7 @@ angular.module( 'homeModuleCtrl' )
 			$('html, body').animate({
 				scrollTop: $('.list-films').offset().top
 			}, 1000);
-			$('.insert-text').html('<h1>You have searched: <span class="item-searched">' + $scope.filmToSearch + '</span></h1>')
+			$('.insert-text').html('<h1>Has buscado: <span class="item-searched">' + $scope.filmToSearch + '</span></h1>')
 
 			searcherService.getInfoFilm( $scope.filmToSearch )
 				.then( function ( dataFilmSearched ){

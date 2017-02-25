@@ -1,7 +1,7 @@
 angular.module( 'specificationsService', [ ] )
 	.factory('specificationsService', function( $http ) {
 
-		var urlToSearchFilm = 'https://api.themoviedb.org/3/movie/<ID_MOVIE>?api_key=71bd8c83c5cc06c197435d2165ac52e4';
+		var urlToSearchFilm = 'https://api.themoviedb.org/3/movie/<ID_MOVIE>?api_key=71bd8c83c5cc06c197435d2165ac52e4&language=es';
 
 		function getSpecificationsFilm ( idFilmToSearch ) {
 			var urlToSearchFilmChanged = urlToSearchFilm.replace('<ID_MOVIE>', idFilmToSearch)

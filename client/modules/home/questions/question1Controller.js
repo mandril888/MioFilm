@@ -4,12 +4,12 @@ angular.module( 'homeModuleCtrl' )
 		$scope.visible = false;
 
 		var oMoodsOpposite = {
-			Mad: 'Scared',
-			Scared: 'Mad',
-			Joyful: 'Powerful',
-			Powerful: 'Joyful',
-			Peaceful: 'Sad',
-			Sad: 'Peaceful',
+			Mad: 'Peaceful',
+			Peaceful: 'Mad',
+			Scared: 'Powerful',
+			Powerful: 'Scared',
+			Joyful: 'Sad',
+			Sad: 'Joyful',
 		}
 
 		var moodFeelingRecived = '';

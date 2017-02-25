@@ -160,6 +160,9 @@
 .btn-sad:hover {
 	background: darken($sad-blue, 10%);
 }
+.btn {
+	padding: 6px 8px;
+}
 
 .star {
 	color: yellow;

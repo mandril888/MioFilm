@@ -1,17 +1,32 @@
 .sign-log {
-	border: 1px solid grey;
+	// border: 1px solid grey;
+	// background-color: #cdcbcc;
+	// border-radius: 5px;
+	// color: white;
+	// margin: 80px 20px;
+	// padding: 40px 40px 25px;
+	// border: 1px solid #3c9;
+	/* border: 1px solid grey; */
 	border-radius: 5px;
-	color: white;
-	background-color: #cdcbcc;
-	margin: 80px 20px;
-	padding: 40px 40px 25px;
+	color: #b33838;
+	margin: 140px 66px;
+	padding: 40px;
+	border: 1px solid #3c9;
+	border-bottom: 1px solid #3c9;
+	background: url('../img/working.jpg');
+	background-position: center;
 
 	h3 {
-		border-radius: 5px 5px 0 0;
-		background-color: $turquoise-blue;
-		margin: -40px -40px 10px;
-		padding: 10px 0;
+		// border-radius: 5px 5px 0 0;
+		// background-color: $turquoise-blue;
+		// margin: -40px -40px 10px;
+		// padding: 10px 0;
+		// text-align: center;
+		padding: 38px;
 		text-align: center;
+		color: #ffffff;
+		text-shadow: 0px 0px 7px #000;
+		margin: 0;
 	}
 
 	form {
@@ -41,6 +56,28 @@
 	}
 }
 
+@media screen and (max-width: 767px){
+	.sign-log {
+		margin: 110px 46px;
+
+		h3 {
+			padding: 26px;
+		}
+	}
+}
+
+@media screen and (max-width: 512px){
+	.sign-log {
+			margin: 110px 26px;
+			padding: 30px;
+
+		h3 {
+			padding: 16px;
+			font-size: 20px;
+		}
+	}
+}
+
 .btn-turquoise {
 	background-color: $turquoise-blue;
 }
@@ -61,19 +98,19 @@
 
 
 @keyframes fadeIn {
-    0% {
-        transform: scale(0);
-        opacity: 0.0;
-    }
-    60% {
-        transform: scale(1.1);
-    }
-    80% {
-        transform: scale(0.9);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
+	0% {
+		transform: scale(0);
+		opacity: 0.0;
+	}
+	60% {
+		transform: scale(1.1);
+	}
+	80% {
+		transform: scale(0.9);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
 }
