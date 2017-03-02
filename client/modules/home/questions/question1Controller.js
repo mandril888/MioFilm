@@ -3,13 +3,22 @@ angular.module( 'homeModuleCtrl' )
 
 		$scope.visible = false;
 
-		var oMoodsOpposite = {
-			Mad: 'Peaceful',
-			Peaceful: 'Mad',
-			Scared: 'Powerful',
-			Powerful: 'Scared',
-			Joyful: 'Sad',
-			Sad: 'Joyful',
+		var oMoodsTranslate = {
+			Mad: 'Cabreado',
+			Peaceful: 'Tranquilo',
+			Scared: 'Asustado',
+			Powerful: 'Potente',
+			Joyful: 'Contento',
+			Sad: 'Triste',
+		}
+
+		var oMoodsOppositeTranslate = {
+			Mad: 'Tranquilo',
+			Peaceful: 'Cabreado',
+			Scared: 'Potente',
+			Powerful: 'Asustado',
+			Joyful: 'Triste',
+			Sad: 'Contento',
 		}
 
 		var moodFeelingRecived = '';
@@ -22,12 +31,12 @@ angular.module( 'homeModuleCtrl' )
 		$scope.filterSetMoodFilm = function ( info ) {
 			$('#question2').css('display', 'block');
 			$('#question1').css('display', 'none');
-			$('#question4 span').html("I'll have luck");
+			$('#question4 span').html("Buscar");
 
 			if ( info === 'mood') {
-				moodSearch = moodFeelingRecived;
+				moodSearch = oMoodsTranslate[moodFeelingRecived];
 			} else {
-				moodSearch = oMoodsOpposite[moodFeelingRecived];
+				moodSearch = oMoodsOppositeTranslate[moodFeelingRecived];
 			}
 
 			$rootScope.$broadcast('moodSearchSend', moodSearch);

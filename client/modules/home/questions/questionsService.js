@@ -1,7 +1,7 @@
 angular.module( 'homeService' )
 	.factory('questionsService', function( $http ) {
 
-		var urlToSearchFilmByMood = 'https://api.themoviedb.org/3/discover/movie?api_key=71bd8c83c5cc06c197435d2165ac52e4&with_genres=<MOOD_NUM>&page=<PAGE>';
+		var urlToSearchFilmByMood = 'https://api.themoviedb.org/3/discover/movie?api_key=71bd8c83c5cc06c197435d2165ac52e4&with_genres=<MOOD_NUM>&page=<PAGE>&language=es';
 
 		function getInfoFilmByMood ( moodNumber ) {
 			var randomPage = Math.floor(Math.random() * 1000) + 1;
@@ -17,7 +17,7 @@ angular.module( 'homeService' )
 		}
 
 		// REVISAR - esta petición es la misma que la de specificationsService
-		var urlToGetInfoFilm = 'https://api.themoviedb.org/3/movie/<ID_MOVIE>?api_key=71bd8c83c5cc06c197435d2165ac52e4';
+		var urlToGetInfoFilm = 'https://api.themoviedb.org/3/movie/<ID_MOVIE>?api_key=71bd8c83c5cc06c197435d2165ac52e4&language=es';
 
 		function getSpecificationsFilm ( idFilmToSearch ) {
 			var urlToSearchFilmChanged = urlToGetInfoFilm.replace('<ID_MOVIE>', idFilmToSearch)
