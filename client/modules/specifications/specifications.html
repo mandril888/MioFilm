@@ -3,7 +3,7 @@
 		<div class="header-cover" ng-style="{'background-image':'url(http://image.tmdb.org/t/p/w500' + specificationsFilmSearched.backdrop_path + ')'}" altStyle="{{imageNotFoundHeaderCover}}" onerror="this.style = $(this).attr('altStyle')">
 			<div class="cover" ng-style="{'background-image':'url(http://image.tmdb.org/t/p/w500' + specificationsFilmSearched.poster_path + ')'}" altStyle="{{imageNotFoundCover}}" onerror="this.style = $(this).attr('altStyle')"></div>
 			<div class="title-film">
-				<p class="helvetica-font"><strong>{{ specificationsFilmSearched.original_title }}</strong></p>
+				<p class="helvetica-font"><strong>{{ specificationsFilmSearched.title }}</strong></p>
 			</div>
 		</div>
 		<div class="row">

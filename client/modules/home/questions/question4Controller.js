@@ -25,18 +25,18 @@ angular.module( 'homeModuleCtrl' )
 		$scope.searchFilmWithFilter = function() {
 			$('.list-films').css('display', 'flex')
 			$('.insert-text').html('<h1>Has buscado por: <span class="item-searched">' + moodSearchRecived + '</span></h1>')
-			$('#question4 span').html('Repeat the search');
+			$('#question4 span').html('Sigue intentándolo');
 			$('html, body').animate({
 				scrollTop: $('.to-move-scroll').offset().top
 			}, 1000);
 
 			var moodNumber;
-			if ( moodSearchRecived === 'Sad' ) { moodNumber = '80|18|10752';
-			} else if ( moodSearchRecived === 'Joyful') { moodNumber = '12|16|35|10751|14|10402|10749';
-			} else if ( moodSearchRecived === 'Mad') { moodNumber = '28|80|53|10752';
-			} else if ( moodSearchRecived === 'Powerful') { moodNumber = '28|12|14|9648|878|53';
-			} else if ( moodSearchRecived === 'Scared') { moodNumber = '80|27|9648';
-			} else if ( moodSearchRecived === 'Peaceful') { moodNumber = '99|10751|14|36|10402|10749';
+			if ( moodSearchRecived === 'Triste' ) { moodNumber = '80|18|10752';
+			} else if ( moodSearchRecived === 'Contento') { moodNumber = '12|16|35|10751|14|10402|10749';
+			} else if ( moodSearchRecived === 'Cabreado') { moodNumber = '28|80|53|10752';
+			} else if ( moodSearchRecived === 'Potente') { moodNumber = '28|12|14|9648|878|53';
+			} else if ( moodSearchRecived === 'Asustado') { moodNumber = '80|27|9648';
+			} else if ( moodSearchRecived === 'Pacifico') { moodNumber = '99|10751|14|36|10402|10749';
 			}
 
 			var aFilmsFiltered = [];

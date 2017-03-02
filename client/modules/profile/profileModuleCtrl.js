@@ -32,7 +32,7 @@ angular.module( 'profileModuleCtrl', [ ] )
 								var userInfoFilm = {
 									id: dataFilmSearched.data.id,
 									poster_path: dataFilmSearched.data.poster_path,
-									original_title: dataFilmSearched.data.original_title,
+									title: dataFilmSearched.data.title,
 									mood: item.mood,
 									rate: item.rate
 								}
